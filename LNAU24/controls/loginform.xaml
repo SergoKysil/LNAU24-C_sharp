@@ -1,0 +1,110 @@
+﻿<UserControl x:Class="LNAU24.controls.loginform"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LNAU24.controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="300">
+
+
+    <Border Background="#D0D0D0">
+        <StackPanel Margin="10">
+            <Image Source="/Resources/logo_green.png" Height="150" ></Image>
+            
+            <Label Content="Увійти" Foreground="Black" HorizontalAlignment="Center" Margin="20, 10, 20, 0" FontSize="16" FontWeight="Medium"></Label>
+            
+            <Separator Margin="40, 0, 40, 10"></Separator>
+            
+            <TextBox Margin="10, 5, 10, 10" >
+                <TextBox.Template>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Grid>
+                            <TextBox 
+                                x:Name="txtbUserName" 
+                                Background="White"
+                                Foreground="#5B5B5B"
+                                FontSize="16"
+                                Padding="25,0,0,0"
+                                Text="{TemplateBinding Text}">
+                            </TextBox>
+                            <Image  
+                                Margin="5" 
+                                Source="/Resources/mail_ico.png" 
+                                Width="16" 
+                                Height="16"
+                                HorizontalAlignment="Left" >
+                            </Image>
+                           
+                        </Grid>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+            
+            <PasswordBox Margin="10, 5, 10, 10">
+                <PasswordBox.Template>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Grid>
+                            <PasswordBox 
+                                x:Name="txtbPassword"
+                                Background="White"
+                                Foreground="#5B5B5B"
+                                FontSize="16"
+                                BorderBrush = "{TemplateBinding BorderBrush}"
+                                Padding="25,0,0,0"
+                                PasswordChar="*">
+                            </PasswordBox>
+                            <Image 
+                                Margin="5" 
+                                Source="/Resources/password_ico.png"
+                                Width="16"
+                                Height="16"
+                                HorizontalAlignment="Left"
+                            ></Image>
+                        </Grid>
+                    </ControlTemplate>
+                </PasswordBox.Template>
+            </PasswordBox>
+
+            <CheckBox x:Name="chebx_Remember_me"
+                      IsThreeState="False"
+                      IsChecked="False"
+                      
+                      Content="Запам'ятати мене?"
+                      HorizontalAlignment="Center"
+                      Margin="0,0,0,5"
+                      Foreground="Green">
+                
+            </CheckBox>
+
+            <Button x:Name="btn_Sing_in"
+                    Content="Увійти"
+                    Foreground="FloralWhite"
+                    Margin="50, 5"
+                    Background="#0EDD1C"
+                    FontSize="16"
+                    FontWeight="SemiBold" MouseEnter="btn_Sing_in_MouseEnter"></Button>
+
+            <Button  x:Name="lbl_Forgot_pass"
+                   BorderThickness="0"
+                   Background="Transparent"
+                   Content="Ви забули свій пароль?"
+                   HorizontalAlignment="Center"
+                   Margin="5"
+                   Foreground="Green"
+                   FontSize="12">
+            </Button>
+           
+            <Button x:Name="lbl_Create_account"
+                    BorderThickness="0"
+                   Background="Transparent"
+                   Content="Створити аккаунт?"
+                   HorizontalAlignment="Center"
+                   Margin="-5"
+                   Foreground="Green"
+                   FontSize="12">
+            </Button>
+        </StackPanel>
+    </Border>
+   
+</UserControl>
