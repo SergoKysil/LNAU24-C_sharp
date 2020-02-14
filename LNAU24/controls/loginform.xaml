@@ -10,10 +10,18 @@
 
     <Border Background="#D0D0D0">
         <StackPanel Margin="10">
-            <Image Source="/Resources/logo_green.png" Height="150" ></Image>
-            
-            <Label Content="Увійти" Foreground="Black" HorizontalAlignment="Center" Margin="20, 10, 20, 0" FontSize="16" FontWeight="Medium"></Label>
-            
+            <Image Source="/Resources/logo/logo_green.png" 
+                   Height="150" >
+            </Image>
+
+            <Label Content="Увійти"
+                   Foreground="Black"
+                   HorizontalAlignment="Center"
+                   Margin="20, 10, 20, 0"
+                   FontSize="16"
+                   FontWeight="Medium">
+            </Label>
+
             <Separator Margin="40, 0, 40, 10"></Separator>
             
             <TextBox Margin="10, 5, 10, 10" >
@@ -21,19 +29,13 @@
                     <ControlTemplate TargetType="{x:Type TextBox}">
                         <Grid>
                             <TextBox 
-                                x:Name="txtbUserName" 
-                                Background="White"
-                                Foreground="#5B5B5B"
-                                FontSize="16"
-                                Padding="25,0,0,0"
+                                x:Name="tbUserName" 
+                                Style="{StaticResource Style_for_tbox_white}"
                                 Text="{TemplateBinding Text}">
                             </TextBox>
                             <Image  
-                                Margin="5" 
-                                Source="/Resources/mail_ico.png" 
-                                Width="16" 
-                                Height="16"
-                                HorizontalAlignment="Left" >
+                                Source="/Resources/login/mail_ico.png" 
+                                Style="{StaticResource Style_for_img_tb}">
                             </Image>
                            
                         </Grid>
@@ -46,21 +48,13 @@
                     <ControlTemplate TargetType="{x:Type PasswordBox}">
                         <Grid>
                             <PasswordBox 
-                                x:Name="txtbPassword"
-                                Background="White"
-                                Foreground="#5B5B5B"
-                                FontSize="16"
-                                BorderBrush = "{TemplateBinding BorderBrush}"
-                                Padding="25,0,0,0"
+                                x:Name="tbPassword"
+                                Style="{StaticResource Style_for_tbox_white}"
+                                BorderBrush = "{TemplateBinding BorderBrush}"                               
                                 PasswordChar="*">
                             </PasswordBox>
-                            <Image 
-                                Margin="5" 
-                                Source="/Resources/password_ico.png"
-                                Width="16"
-                                Height="16"
-                                HorizontalAlignment="Left"
-                            ></Image>
+                            <Image Source="/Resources/login/password_ico.png"
+                                   Style="{StaticResource Style_for_img_tb}"/>
                         </Grid>
                     </ControlTemplate>
                 </PasswordBox.Template>
@@ -68,8 +62,7 @@
 
             <CheckBox x:Name="chebx_Remember_me"
                       IsThreeState="False"
-                      IsChecked="False"
-                      
+                      IsChecked="False"       
                       Content="Запам'ятати мене?"
                       HorizontalAlignment="Center"
                       Margin="0,0,0,5"
@@ -79,30 +72,24 @@
 
             <Button x:Name="btn_Sing_in"
                     Content="Увійти"
+                    BorderThickness="1"
                     Foreground="FloralWhite"
                     Margin="50, 5"
                     Background="#0EDD1C"
                     FontSize="16"
-                    FontWeight="SemiBold" MouseEnter="btn_Sing_in_MouseEnter"></Button>
-
-            <Button  x:Name="lbl_Forgot_pass"
-                   BorderThickness="0"
-                   Background="Transparent"
-                   Content="Ви забули свій пароль?"
-                   HorizontalAlignment="Center"
-                   Margin="5"
-                   Foreground="Green"
-                   FontSize="12">
+                    FontWeight="SemiBold" >
             </Button>
-           
-            <Button x:Name="lbl_Create_account"
-                    BorderThickness="0"
-                   Background="Transparent"
-                   Content="Створити аккаунт?"
-                   HorizontalAlignment="Center"
-                   Margin="-5"
-                   Foreground="Green"
-                   FontSize="12">
+
+            <Button  x:Name="btn_Forgot_pass"
+                     Content="Ви забули свій пароль?"
+                     Style="{StaticResource Style_for_button_white}"
+                     Margin="5">
+            </Button>
+
+            <Button x:Name="btn_Create_account"
+                    Content="Створити аккаунт?"
+                    Margin="-5"
+                    Style="{StaticResource Style_for_button_white}">
             </Button>
         </StackPanel>
     </Border>

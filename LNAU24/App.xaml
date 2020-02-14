@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:LNAU24"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/style/style_log_white.xaml"/>
+                <ResourceDictionary Source="/style/style_menu_white.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
          
     </Application.Resources>
 </Application>

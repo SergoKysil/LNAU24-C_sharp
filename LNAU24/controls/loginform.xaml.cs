@@ -25,9 +25,6 @@ namespace LNAU24.controls
             InitializeComponent();
         }
 
-        private void btn_Sing_in_MouseEnter(object sender, MouseEventArgs e)
-        {
-            ;
-        }
+       
     }
 }
