@@ -7,9 +7,17 @@
         <Setter Property="ItemsControl.Width" Value="auto"/>
         <Setter Property="ItemsControl.Height" Value="50"/>
         <Setter Property="ItemsControl.BorderThickness" Value="0"/>
-        <Setter Property="ItemsControl.Background" Value="Transparent"/>
+        <Setter Property="ItemsControl.Background" Value="{x:Null}"/>
         <Setter Property="ItemsControl.Cursor" Value="Hand"/>
-        <Setter Property="DockPanel.Dock" Value="Top"/>
+        
     </Style>
-    
+
+    <Style x:Key="Style_for_img_menu">
+        <Setter Property="ItemsControl.Width" Value="auto"/>
+        <Setter Property="ItemsControl.Height" Value="auto"/>
+        <Setter Property="ItemsControl.BorderBrush" Value="{x:Null}"/>
+        <Setter Property="ItemsControl.Background" Value="{x:Null}"/>
+        <Setter Property="ItemsControl.Foreground" Value="#5B5B5B"/>
+    </Style>
+
 </ResourceDictionary>

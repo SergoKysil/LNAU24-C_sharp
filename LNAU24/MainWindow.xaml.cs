@@ -14,7 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Application = System.Windows.Forms.Application;
+
 
 namespace LNAU24
 {
@@ -33,9 +33,22 @@ namespace LNAU24
             
         }
 
+
+
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
             Close();
+        }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
+        }
+
+        private void log_Loaded(object sender, RoutedEventArgs e)
+        {
+            loginform login = new loginform();
+            log.Children.Add(login);
         }
     }
 }

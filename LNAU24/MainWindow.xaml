@@ -3,70 +3,98 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:LNAU24"
         mc:Ignorable="d"
         Title="LNAU24" Height="640" Width="1080" Icon="./Resources/logo/Logoico.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
     <Border Background="#FFFFFF">
+       
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1030"/>
-                <ColumnDefinition Width="50*"/>
-            </Grid.ColumnDefinitions>
+            <Grid x:Name="log" Background="#D0D0D0"  Loaded="log_Loaded">
 
-        
-            <DockPanel LastChildFill="True" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Background="#FFD700" Grid.Column="1" Grid.RowSpan="2">
-                <Button x:Name="btn_Menu"
-                    Style="{StaticResource Style_for_buttons_white}">
-                    <Image Source="./Resources/menu/menu_bar.png"/>
-                </Button>
+            </Grid>
 
-                <Button x:Name="btn_User" 
-                    Style="{StaticResource Style_for_buttons_white}">
-                    <Image Source="./Resources/menu/user.png"/>
-                </Button>
-
-                <Button x:Name="btn_News"
-                        Style ="{StaticResource Style_for_buttons_white}">
-                    <Image Source="./Resources/menu/news.png"/>
-                </Button>
-
-                <Button x:Name="btn_Entrant"
+            <Grid Height="50" VerticalAlignment="Top" Background="LimeGreen" MouseDown="Grid_MouseDown">
+                
+                <TextBlock Foreground="White" Text="LNAU24" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    
+                    <Button x:Name="btn_Info"  VerticalAlignment="Bottom"
                         Style="{StaticResource Style_for_buttons_white}">
-                    <Image Source="./Resources/menu/entrant.png" Margin="0,0,1,0"/>
-                </Button>
+                        <materialDesign:PackIcon 
+                            Kind="InformationOutline"
+                            Style="{StaticResource Style_for_img_menu}">
+                        </materialDesign:PackIcon>
+                    </Button>
 
-                <Button x:Name="btn_Events"
-                        Style="{StaticResource Style_for_buttons_white}">
-                    <Image Source="./Resources/menu/event.png"/>
-                </Button>
-
-                <Button x:Name="btn_Faculty"
-                        Style="{StaticResource Style_for_buttons_white}">
-                    <Image Source="./Resources/menu/faculty.png"/>
-                </Button>
-
-                <Button x:Name="btn_Info" 
-                        Style="{StaticResource Style_for_buttons_white}">
-                    <Image Source="./Resources/menu/info.png"/>
-                </Button>
-
-                <Button x:Name="btn_exit" 
-                        VerticalAlignment="Bottom"                        
+                    <Button x:Name="btn_exit" 
+                        VerticalAlignment="Stretch" HorizontalAlignment="Right"                       
                         Style="{StaticResource Style_for_buttons_white}" 
                         Click="btn_exit_Click" >
-                    <Image Source="./Resources/menu/exit.png" Height="50"/>
-                </Button>
-            </DockPanel>
+                        <materialDesign:PackIcon 
+                            Kind="Power"                                                
+                            Style="{StaticResource Style_for_img_menu}" >
+                        </materialDesign:PackIcon>
+                    </Button>
 
-            <DockPanel Grid.Row="0" Background="#FFD700" >
-                <Image Source="./Resources/logo/logo_green.png" />
-                <Label Content="LNAU24"   VerticalAlignment="Center"  FontWeight="Bold"  FontSize="30"></Label>
-            </DockPanel>
+                   
+                </StackPanel>
+                
+            </Grid>
+
+            
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Left" Background="LimeGreen" Width="auto">
+                
+                <StackPanel>
+                    
+                    <Button x:Name="btn_Menu"
+                        Style="{StaticResource Style_for_buttons_white}">
+                        <materialDesign:PackIcon 
+                            Kind="Menu"
+                            Style="{StaticResource Style_for_img_menu}">
+                        </materialDesign:PackIcon>
+                    </Button>
+
+                    <Button x:Name="btn_User" 
+                    Style="{StaticResource Style_for_buttons_white}">
+                        <materialDesign:PackIcon 
+                            Kind="UserOutline"
+                            Style="{StaticResource Style_for_img_menu}">
+                        </materialDesign:PackIcon>
+                    </Button>
+
+                    <Button x:Name="btn_News"
+                        Style ="{StaticResource Style_for_buttons_white}">
+                        <materialDesign:PackIcon 
+                            Kind="Home"
+                            Style="{StaticResource Style_for_img_menu}">
+                        </materialDesign:PackIcon>
+                    </Button>
+
+                    <Button x:Name="btn_Entrant"
+                        Style="{StaticResource Style_for_buttons_white}">
+                        <Image Source="./Resources/menu/entrant.png" />
+                    </Button>
+
+                    <Button x:Name="btn_Events"
+                        Style="{StaticResource Style_for_buttons_white}">
+                        <Image Source="./Resources/menu/event.png"/>
+                    </Button>
+
+                    <Button x:Name="btn_Faculty"
+                        Style="{StaticResource Style_for_buttons_white}">
+                        <Image Source="./Resources/menu/faculty.png"/>
+                    </Button>
+                    
+                </StackPanel>
+                
+            </Grid>
+
+
+            
+
 
         </Grid>
 

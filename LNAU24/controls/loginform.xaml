@@ -3,95 +3,93 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              xmlns:local="clr-namespace:LNAU24.controls"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="300">
-
-
-    <Border Background="#D0D0D0">
-        <StackPanel Margin="10">
+             d:DesignHeight="600" d:DesignWidth="450">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="Black" Offset="0"/>
+                <GradientStop Color="#FF09B018" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <StackPanel Margin="50">
+           
             <Image Source="/Resources/logo/logo_green.png" 
-                   Height="150" >
+                   Height="150" Width="150" >
             </Image>
 
-            <Label Content="Увійти"
-                   Foreground="Black"
-                   HorizontalAlignment="Center"
-                   Margin="20, 10, 20, 0"
-                   FontSize="16"
-                   FontWeight="Medium">
-            </Label>
+            <Border Background="WhiteSmoke" Margin="10 20" CornerRadius="15">
+                <Border.Effect>
+                    <DropShadowEffect Opacity="0.5" Direction="312" Color="{DynamicResource {x:Static SystemColors.ControlDarkDarkColorKey}}" BlurRadius="20"/>
+                </Border.Effect>
+                <StackPanel Margin="25">
+                    
+                    <TextBox Margin="15" 
+                             FontSize="16"                               
+                             Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
+                             materialDesign:HintAssist.Hint="E-mail">
+                    </TextBox>
+                    
+                    <PasswordBox Margin="15" 
+                             FontSize="16"  
+                             Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" 
+                             materialDesign:HintAssist.Hint="Password">
+                    </PasswordBox>
 
-            <Separator Margin="40, 0, 40, 10"></Separator>
-            
-            <TextBox Margin="10, 5, 10, 10" >
-                <TextBox.Template>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Grid>
-                            <TextBox 
-                                x:Name="tbUserName" 
-                                Style="{StaticResource Style_for_tbox_white}"
-                                Text="{TemplateBinding Text}">
-                            </TextBox>
-                            <Image  
-                                Source="/Resources/login/mail_ico.png" 
-                                Style="{StaticResource Style_for_img_tb}">
-                            </Image>
-                           
-                        </Grid>
-                    </ControlTemplate>
-                </TextBox.Template>
-            </TextBox>
-            
-            <PasswordBox Margin="10, 5, 10, 10">
-                <PasswordBox.Template>
-                    <ControlTemplate TargetType="{x:Type PasswordBox}">
-                        <Grid>
-                            <PasswordBox 
-                                x:Name="tbPassword"
-                                Style="{StaticResource Style_for_tbox_white}"
-                                BorderBrush = "{TemplateBinding BorderBrush}"                               
-                                PasswordChar="*">
-                            </PasswordBox>
-                            <Image Source="/Resources/login/password_ico.png"
-                                   Style="{StaticResource Style_for_img_tb}"/>
-                        </Grid>
-                    </ControlTemplate>
-                </PasswordBox.Template>
-            </PasswordBox>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                        
+                        <CheckBox x:Name="checkbox_Remember_me" 
+                                  Cursor="Hand"                             
+                                  Style="{StaticResource MaterialDesignCheckBox}">
+                        </CheckBox>
 
-            <CheckBox x:Name="chebx_Remember_me"
-                      IsThreeState="False"
-                      IsChecked="False"       
-                      Content="Запам'ятати мене?"
-                      HorizontalAlignment="Center"
-                      Margin="0,0,0,5"
-                      Foreground="Green">
-                
-            </CheckBox>
+                        <TextBox Text="Запам'ятати мене?" 
+                                 Style="{StaticResource MaterialDesignComboBoxEditableTextBox}" 
+                                 Foreground="Green"
+                                 Cursor="Arrow">
+                        </TextBox>
 
-            <Button x:Name="btn_Sing_in"
-                    Content="Увійти"
-                    BorderThickness="1"
-                    Foreground="FloralWhite"
-                    Margin="50, 5"
-                    Background="#0EDD1C"
-                    FontSize="16"
-                    FontWeight="SemiBold" >
-            </Button>
+                    </StackPanel>
+                    
+                    
+                    <StackPanel>
+                        
+                        <Button x:Name="btn_Sing_in" 
+                            Content="Увійти" 
+                            Margin="40 5"
+                            Style="{StaticResource MaterialDesignFlatDarkBgButton}">
 
-            <Button  x:Name="btn_Forgot_pass"
+                        </Button>
+
+                        <Button  x:Name="btn_Forgot_pass"
                      Content="Ви забули свій пароль?"
                      Style="{StaticResource Style_for_button_white}"
                      Margin="5">
-            </Button>
+                        </Button>
 
-            <Button x:Name="btn_Create_account"
+                        <Button x:Name="btn_Create_account"
                     Content="Створити аккаунт?"
                     Margin="-5"
                     Style="{StaticResource Style_for_button_white}">
-            </Button>
+                        </Button>
+                    </StackPanel>
+                   
+
+                </StackPanel>
+            </Border>
+
+
+
+           
+
+            
+
+           
         </StackPanel>
-    </Border>
-   
+
+    </Grid>
+
+    
 </UserControl>

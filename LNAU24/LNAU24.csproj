@@ -124,12 +124,6 @@
     <Resource Include="Resources\logo\Logo no shield with bg.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\login\mail_ico.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\login\password_ico.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\logo\logo_green.png" />
   </ItemGroup>
   <ItemGroup>
