@@ -10,21 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LNAU24.controls
+namespace LNAU24
 {
     /// <summary>
-    /// Логика взаимодействия для loginform.xaml
+    /// Логика взаимодействия для sing_in.xaml
     /// </summary>
-    public partial class loginform : UserControl
+    public partial class sing_in : Window
     {
-        public loginform()
+        public sing_in()
         {
             InitializeComponent();
         }
-
-       
     }
 }

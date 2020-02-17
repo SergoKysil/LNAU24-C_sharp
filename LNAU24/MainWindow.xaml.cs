@@ -26,14 +26,18 @@ namespace LNAU24
         public MainWindow()
         {
             InitializeComponent();
-            
 
-           
+
+            loginform login = new loginform();
+            login.Show();
 
             
         }
 
-
+        void btn_User_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)
         {
@@ -45,10 +49,6 @@ namespace LNAU24
             DragMove();
         }
 
-        private void log_Loaded(object sender, RoutedEventArgs e)
-        {
-            loginform login = new loginform();
-            log.Children.Add(login);
-        }
+       
     }
 }

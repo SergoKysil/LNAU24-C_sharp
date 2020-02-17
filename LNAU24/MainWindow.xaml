@@ -6,14 +6,10 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:LNAU24"
         mc:Ignorable="d"
-        Title="LNAU24" Height="640" Width="1080" Icon="./Resources/logo/Logoico.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
+        Title="LNAU24" Height="650" Width="1080" Icon="./Resources/logo/Logoico.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
     <Border Background="#FFFFFF">
        
         <Grid>
-
-            <Grid x:Name="log" Background="#D0D0D0"  Loaded="log_Loaded">
-
-            </Grid>
 
             <Grid Height="50" VerticalAlignment="Top" Background="LimeGreen" MouseDown="Grid_MouseDown">
                 
@@ -58,7 +54,8 @@
                     </Button>
 
                     <Button x:Name="btn_User" 
-                    Style="{StaticResource Style_for_buttons_white}">
+                    Style="{StaticResource Style_for_buttons_white}"
+                            Click="btn_User_Click">
                         <materialDesign:PackIcon 
                             Kind="UserOutline"
                             Style="{StaticResource Style_for_img_menu}">
@@ -91,9 +88,6 @@
                 </StackPanel>
                 
             </Grid>
-
-
-            
 
 
         </Grid>
