@@ -1,5 +1,4 @@
-﻿using LNAU24.controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,15 +27,15 @@ namespace LNAU24
             InitializeComponent();
 
 
-            loginform login = new loginform();
-            login.Show();
+            
 
             
         }
 
         void btn_User_Click(object sender, RoutedEventArgs e)
         {
-            
+            sing_in log = new sing_in();
+            log.Show();
         }
 
         private void btn_exit_Click(object sender, RoutedEventArgs e)

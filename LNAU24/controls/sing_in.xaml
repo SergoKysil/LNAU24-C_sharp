@@ -8,14 +8,14 @@
         mc:Ignorable="d"
         Title="Sing_in" Height="600" Width="450"  Icon="/Resources/logo/Logoico.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid MouseDown="Grid_MouseDown">
-
+            
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="0"/>
                 <GradientStop Color="#FF09B018" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <StackPanel Margin="50,50,28,50">
+        <StackPanel Margin="50">
 
             <Image Source="/Resources/logo/logo_green.png" 
                    Height="150" Width="150" >
@@ -23,7 +23,7 @@
 
             <Border Background="WhiteSmoke" Margin="10 20" CornerRadius="15">
                 <Border.Effect>
-                    <DropShadowEffect Opacity="0.5" Direction="312" Color="{DynamicResource {x:Static SystemColors.ControlDarkDarkColorKey}}" BlurRadius="20"/>
+                    <DropShadowEffect Opacity="0.5" Direction="312" Color="{DynamicResource {x:Static SystemColors.ControlDarkDarkColorKey}}" BlurRadius="12"/>
                 </Border.Effect>
                 <StackPanel Margin="25">
 
@@ -73,7 +73,7 @@
                         <Button x:Name="btn_Create_account"
                     Content="Створити аккаунт"
                     Margin="-5"
-                    Style="{StaticResource Style_for_button_white}">
+                    Style="{StaticResource Style_for_button_white}" Click="btn_Create_account_Click">
                         </Button>
 
                     </StackPanel>
@@ -83,7 +83,9 @@
             </Border>
 
         </StackPanel>
-
+        <Button x:Name="btn_Exit" VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="30" BorderBrush="Transparent" Background="Transparent" Click="btn_Exit_Click">
+            <materialDesign:PackIcon Kind="Close" Foreground="Green" Width="auto" Height="auto"/>
+        </Button>
     </Grid>
 
 </Window>
