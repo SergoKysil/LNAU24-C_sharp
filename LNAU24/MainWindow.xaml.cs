@@ -32,22 +32,37 @@ namespace LNAU24
             
         }
 
+        void btn_menu_open_Click(object sender, RoutedEventArgs e)
+        {
+            btn_Close_menu.Visibility = Visibility.Visible;
+            btn_Open_menu.Visibility = Visibility.Collapsed;           
+        }
+
+        void btn_menu_close_Click(object sender, RoutedEventArgs e)
+        {
+            btn_Close_menu.Visibility = Visibility.Collapsed;
+            btn_Open_menu.Visibility = Visibility.Visible;        
+        }
+
         void btn_User_Click(object sender, RoutedEventArgs e)
         {
             sing_in log = new sing_in();
             log.Show();
         }
 
-        private void btn_exit_Click(object sender, RoutedEventArgs e)
+        
+       
+
+       
+
+        private void Exit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             Close();
         }
 
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        private void Title_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }
-
-       
     }
 }

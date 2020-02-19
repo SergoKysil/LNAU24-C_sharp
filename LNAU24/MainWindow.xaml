@@ -7,87 +7,144 @@
         xmlns:local="clr-namespace:LNAU24"
         mc:Ignorable="d"
         Title="LNAU24" Height="650" Width="1080" Icon="./Resources/logo/Logoico.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
+    <Window.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Grid_menu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="65"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Grid_menu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="65"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btn_Open_menu">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btn_Close_menu">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+
+
     <Border Background="#FFFFFF">
-       
+
         <Grid>
+            <Grid x:Name="Title" Height="50" VerticalAlignment="Top" MouseLeftButtonDown="Title_MouseLeftButtonDown">
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#010E02" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Image Source="./Resources/logo/logo_green.png"  ></Image>
+                    <Label Content="LNAU24" VerticalAlignment="Center" Foreground="#FFFFFF" HorizontalAlignment="Center" FontSize="20"></Label>
 
-            <Grid Height="50" VerticalAlignment="Top" Background="LimeGreen" MouseDown="Grid_MouseDown">
-                
-                <TextBlock Foreground="White" Text="LNAU24" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30"/>
-                
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    
-                    <Button x:Name="btn_Info"  VerticalAlignment="Bottom"
-                        Style="{StaticResource Style_for_buttons_white}">
-                        <materialDesign:PackIcon 
-                            Kind="InformationOutline"
-                            Style="{StaticResource Style_for_img_menu}">
-                        </materialDesign:PackIcon>
-                    </Button>
-
-                    <Button x:Name="btn_exit" 
-                        VerticalAlignment="Stretch" HorizontalAlignment="Right"                       
-                        Style="{StaticResource Style_for_buttons_white}" 
-                        Click="btn_exit_Click" >
-                        <materialDesign:PackIcon 
-                            Kind="Power"                                                
-                            Style="{StaticResource Style_for_img_menu}" >
-                        </materialDesign:PackIcon>
-                    </Button>
-
-                   
                 </StackPanel>
-                
-            </Grid>
 
-            
-            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Left" Background="LimeGreen" Width="auto">
-                
+               
+               
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <ListViewItem Padding="0"  Cursor="Hand">
+                        <materialDesign:PackIcon Kind="Twitter"  Height="25" Width="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"  ></materialDesign:PackIcon>
+                    </ListViewItem>
+                    <ListViewItem Padding="0" Cursor="Hand">
+                        <materialDesign:PackIcon Kind="Facebook" Height="25" Width="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" ></materialDesign:PackIcon>
+                    </ListViewItem>
+                    <ListViewItem Padding="0"  Cursor="Hand">
+                        <materialDesign:PackIcon Kind="Instagram" Height="25" Width="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"  ></materialDesign:PackIcon>
+                    </ListViewItem>
+                    <ListViewItem Padding="0"  Cursor="Hand">
+                        <materialDesign:PackIcon Kind="Youtube" Height="25" Width="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"  ></materialDesign:PackIcon>
+                    </ListViewItem>
+                     </StackPanel>
+
+            </Grid>
+            <Grid x:Name="Grid_menu" Width="65" VerticalAlignment="Stretch" HorizontalAlignment="Left" >
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0"/>
+                        <GradientStop Color="#FF09B018" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
                 <StackPanel>
                     
-                    <Button x:Name="btn_Menu"
-                        Style="{StaticResource Style_for_buttons_white}">
-                        <materialDesign:PackIcon 
-                            Kind="Menu"
-                            Style="{StaticResource Style_for_img_menu}">
-                        </materialDesign:PackIcon>
-                    </Button>
+                    <Grid Height="50">
+                        
+                        
+                        <Button x:Name="btn_Close_menu"  Click="btn_menu_close_Click" Width="70" Height="50" Background="{x:Null}" BorderBrush="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Right"  Visibility="Collapsed" >
+                            <materialDesign:PackIcon Kind="ArrowLeft"  Width="30" Height="30" Margin="-7 0" Foreground="#FFFFFF"/>
+                        </Button>
+                        <Button x:Name="btn_Open_menu" Click="btn_menu_open_Click" Width="50" Height="50" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalAlignment="Right"  Margin="7 0" VerticalAlignment="Top">
+                            <materialDesign:PackIcon Kind="Menu" Width="30" Height="30" Margin="7 0" Foreground="#FFFFFF"/>
+                        </Button>
+                    </Grid>
 
-                    <Button x:Name="btn_User" 
-                    Style="{StaticResource Style_for_buttons_white}"
-                            Click="btn_User_Click">
-                        <materialDesign:PackIcon 
-                            Kind="UserOutline"
-                            Style="{StaticResource Style_for_img_menu}">
-                        </materialDesign:PackIcon>
-                    </Button>
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="#FFFFFF" Cursor="Hand">
 
-                    <Button x:Name="btn_News"
-                        Style ="{StaticResource Style_for_buttons_white}">
-                        <materialDesign:PackIcon 
-                            Kind="Home"
-                            Style="{StaticResource Style_for_img_menu}">
-                        </materialDesign:PackIcon>
-                    </Button>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="UserOutline" Width="30" Margin="10" Height="30" />
+                                <TextBlock Text="Профіль" VerticalAlignment="Center"  Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <Button x:Name="btn_Entrant"
-                        Style="{StaticResource Style_for_buttons_white}">
-                        <Image Source="./Resources/menu/entrant.png" />
-                    </Button>
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="Home"  Width="30" Height="30" Margin="10"/>
+                                <TextBlock Text="Головна" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
 
-                    <Button x:Name="btn_Events"
-                        Style="{StaticResource Style_for_buttons_white}">
-                        <Image Source="./Resources/menu/event.png"/>
-                    </Button>
 
-                    <Button x:Name="btn_Faculty"
-                        Style="{StaticResource Style_for_buttons_white}">
-                        <Image Source="./Resources/menu/faculty.png"/>
-                    </Button>
-                    
+
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="UserCardDetailsOutline"  Width="30" Height="30" Margin="10"/>
+                                <TextBlock Text="Абітурієнту" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="CalendarMonthOutline"  Width="30" Height="30" Margin="10"/>
+                                <TextBlock Text="Події" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                        <ListViewItem>
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon Kind="UniversityOutline" Width="30" Height="30" Margin="10"/>
+                                <TextBlock Text="Факультети" VerticalAlignment="Center" Margin="20 10"/>
+                            </StackPanel>
+                        </ListViewItem>
+
+                    </ListView>
+
                 </StackPanel>
-                
+
+
+                <ListViewItem  x:Name="Exit" VerticalAlignment="Bottom"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" MouseLeftButtonUp="Exit_MouseLeftButtonUp" Cursor="Hand">
+                    <StackPanel Orientation="Horizontal">
+                        <materialDesign:PackIcon Kind="Close" Width="30" Height="30" Margin="10"/>
+                        <TextBlock Text="Вийти" FontSize="14" VerticalAlignment="Center" Margin="20 10"/>
+                    </StackPanel>
+                </ListViewItem>
+
+
             </Grid>
+
+
+
+
 
 
         </Grid>
