@@ -44,11 +44,6 @@ namespace LNAU24
             btn_Open_menu.Visibility = Visibility.Visible;        
         }
 
-        void btn_User_Click(object sender, RoutedEventArgs e)
-        {
-            sing_in log = new sing_in();
-            log.Show();
-        }
 
         
        
@@ -60,7 +55,7 @@ namespace LNAU24
             Close();
         }
 
-        private void Title_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void Title_prog_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             DragMove();
         }

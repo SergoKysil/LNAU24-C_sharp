@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:LNAU24"
         mc:Ignorable="d"
-        Title="LNAU24" Height="650" Width="1080" Icon="./Resources/logo/Logoico.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
+        Title="LNAU24" Height="650" Width="1080" Icon="./Resources/image/logos/Logoico.ico" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" >
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="Grid_menu">
@@ -37,7 +37,11 @@
     <Border Background="#FFFFFF">
 
         <Grid>
-            <Grid x:Name="Title" Height="50" VerticalAlignment="Top" MouseLeftButtonDown="Title_MouseLeftButtonDown">
+
+            <Grid x:Name="grid_Content" Width="1015" Height="600" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="AntiqueWhite"></Grid>
+            
+            
+            <Grid x:Name="Title_prog" Height="50" VerticalAlignment="Top" MouseLeftButtonDown="Title_prog_MouseLeftButtonDown">
                 <Grid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="Black"/>
@@ -45,29 +49,13 @@
                     </LinearGradientBrush>
                 </Grid.Background>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Image Source="./Resources/logo/logo_green.png"  ></Image>
-                    <Label Content="LNAU24" VerticalAlignment="Center" Foreground="#FFFFFF" HorizontalAlignment="Center" FontSize="20"></Label>
+                    <Image Source="./Resources/image/logos/logo_white.png" Width="45" Height="45"></Image>
+                    <Label Content="LNAU24" VerticalAlignment="Center" FontFamily="Verdana" Foreground="#FFFFFF" HorizontalAlignment="Center" FontSize="30"></Label>
 
                 </StackPanel>
-
-               
-               
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <ListViewItem Padding="0"  Cursor="Hand">
-                        <materialDesign:PackIcon Kind="Twitter"  Height="25" Width="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"  ></materialDesign:PackIcon>
-                    </ListViewItem>
-                    <ListViewItem Padding="0" Cursor="Hand">
-                        <materialDesign:PackIcon Kind="Facebook" Height="25" Width="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10" ></materialDesign:PackIcon>
-                    </ListViewItem>
-                    <ListViewItem Padding="0"  Cursor="Hand">
-                        <materialDesign:PackIcon Kind="Instagram" Height="25" Width="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"  ></materialDesign:PackIcon>
-                    </ListViewItem>
-                    <ListViewItem Padding="0"  Cursor="Hand">
-                        <materialDesign:PackIcon Kind="Youtube" Height="25" Width="25" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10"  ></materialDesign:PackIcon>
-                    </ListViewItem>
-                     </StackPanel>
-
             </Grid>
+            
+            
             <Grid x:Name="Grid_menu" Width="65" VerticalAlignment="Stretch" HorizontalAlignment="Left" >
                 <Grid.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -92,38 +80,40 @@
 
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="UserOutline" Width="30" Margin="10" Height="30" />
-                                <TextBlock Text="Профіль" VerticalAlignment="Center"  Margin="20 10"/>
+                                <materialDesign:PackIcon Kind="Home"  Width="30" Height="30" Margin="10"/>
+                                <TextBlock Text="Головна" VerticalAlignment="Center" FontSize="16"  Margin="20 10"/>
                             </StackPanel>
                         </ListViewItem>
 
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="Home"  Width="30" Height="30" Margin="10"/>
-                                <TextBlock Text="Головна" VerticalAlignment="Center" Margin="20 10"/>
+                                <materialDesign:PackIcon Kind="UserOutline" Width="30" Margin="10" Height="30" />
+                                <TextBlock Text="Профіль" VerticalAlignment="Center" FontSize="16"  Margin="20 10"/>
                             </StackPanel>
                         </ListViewItem>
+
+                       
 
 
 
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="UserCardDetailsOutline"  Width="30" Height="30" Margin="10"/>
-                                <TextBlock Text="Абітурієнту" VerticalAlignment="Center" Margin="20 10"/>
+                                <TextBlock Text="Абітурієнту" VerticalAlignment="Center" FontSize="16"  Margin="20 10"/>
                             </StackPanel>
                         </ListViewItem>
 
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="CalendarMonthOutline"  Width="30" Height="30" Margin="10"/>
-                                <TextBlock Text="Події" VerticalAlignment="Center" Margin="20 10"/>
+                                <TextBlock Text="Події" VerticalAlignment="Center" FontSize="16"  Margin="20 10"/>
                             </StackPanel>
                         </ListViewItem>
 
                         <ListViewItem>
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="UniversityOutline" Width="30" Height="30" Margin="10"/>
-                                <TextBlock Text="Факультети" VerticalAlignment="Center" Margin="20 10"/>
+                                <TextBlock Text="Факультети" VerticalAlignment="Center" FontSize="16"  Margin="20 10"/>
                             </StackPanel>
                         </ListViewItem>
 
@@ -131,11 +121,10 @@
 
                 </StackPanel>
 
-
                 <ListViewItem  x:Name="Exit" VerticalAlignment="Bottom"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" MouseLeftButtonUp="Exit_MouseLeftButtonUp" Cursor="Hand">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Close" Width="30" Height="30" Margin="10"/>
-                        <TextBlock Text="Вийти" FontSize="14" VerticalAlignment="Center" Margin="20 10"/>
+                        <TextBlock Text="Вийти" FontSize="16" VerticalAlignment="Center" Margin="20 10"/>
                     </StackPanel>
                 </ListViewItem>
 
