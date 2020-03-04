@@ -6,7 +6,7 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:LNAU24.controls"
         mc:Ignorable="d"
-        Title="sing_up" Height="640" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Icon="/Resources/logo/Logoico.ico">
+        Title="sing_up" Height="640" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Icon="/Resources/image/logos/Logoico.ico">
     <Grid MouseDown="Grid_MouseDown">
 
         <Grid.Background>
@@ -20,7 +20,7 @@
 
 
 
-            <Image Source="/Resources/logo/logo_green.png" Width="130" />
+            <Image Source="/Resources/image/logos/logo_green.png" Width="130" />
 
             <Border Background="WhiteSmoke" Margin="20 10" CornerRadius="15">
 

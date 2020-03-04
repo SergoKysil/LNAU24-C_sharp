@@ -6,7 +6,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:LNAU24"
         mc:Ignorable="d"
-        Title="Sing_in" Height="600" Width="450"  Icon="/Resources/logo/Logoico.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+        Title="Sing_in" Height="600" Width="450"  Icon="/Resources/image/logos/Logoico.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid MouseDown="Grid_MouseDown">
             
         <Grid.Background>
@@ -17,7 +17,7 @@
         </Grid.Background>
         <StackPanel Margin="50">
 
-            <Image Source="/Resources/logo/logo_green.png" 
+            <Image Source="/Resources/image/logos/logo_green.png" 
                    Height="150" Width="150" >
             </Image>
 

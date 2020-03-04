@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LNAU24.controls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -44,11 +45,20 @@ namespace LNAU24
             btn_Open_menu.Visibility = Visibility.Visible;        
         }
 
-
+        news magazine = new news();
         
        
 
-       
+       void Home_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if(grid_Content.Children == null)
+                grid_Content.Children.Add(magazine);
+            else
+            {
+                grid_Content.Children.Clear();
+                grid_Content.Children.Add(magazine);
+            }
+        }
 
         private void Exit_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -59,5 +69,49 @@ namespace LNAU24
         {
             DragMove();
         }
+
+        private void ListViewItem_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            sing_in sing_In = new sing_in();
+            sing_In.Owner = this;
+            sing_In.Show();
+
+        }
+
+        public void Fullscren_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            if (this.WindowState == WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Normal;               
+                grid_content_resize_norm();
+                magazine.normal_news();
+            } 
+            else
+            {
+                this.WindowState = WindowState.Maximized;                
+                grid_content_resize_max();
+                magazine.maximazed_news();
+            }
+
+        }
+
+        private void Minimized_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
+
+        void grid_content_resize_max()
+        {
+            grid_Content.Width = SystemParameters.PrimaryScreenWidth - 50;
+            grid_Content.Height = SystemParameters.PrimaryScreenHeight - 50;
+        }
+        
+        void grid_content_resize_norm()
+        {
+            grid_Content.Width = 1015;
+            grid_Content.Height = 600;
+        }
+
+       
     }
 }
