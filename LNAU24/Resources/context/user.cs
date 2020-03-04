@@ -12,11 +12,22 @@ namespace LNAU24.Resources.types
 
         public user(string Name, string Surname, string Email)
         {
-            name = Name;
+            this.name = Name;
 
-            surname = Surname;
+            this.surname = Surname;
             
-            email = Email;
+            this.email = Email;
+        }
+
+        public user(string Name, string Surname, string Email, Image Image)
+        {
+            this.name = Name;
+
+            this.surname = Surname;
+
+            this.email = Email;
+
+            this.user_image = Image;
         }
 
         public int ID { get; set; }

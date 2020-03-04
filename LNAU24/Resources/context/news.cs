@@ -12,6 +12,19 @@ namespace LNAU24.Resources.context
     class news
     {
 
+        public news(string Title, string Body)
+        {
+            this.title = Title;
+            this.body = Body;
+        }
+
+        public news(string Title, string Body, Image[] Images)
+        {
+            this.title = Title;
+            this.body = Body;
+            this.images = Images;
+        }
+
         int ID { get; set; }
 
         string title { get; set; }

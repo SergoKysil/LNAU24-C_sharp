@@ -73,6 +73,7 @@
     </Compile>
     <Compile Include="Resources\context\cathedra.cs" />
     <Compile Include="Resources\context\file.cs" />
+    <Compile Include="Resources\context\group.cs" />
     <Compile Include="Resources\context\news.cs" />
     <Compile Include="Resources\context\user.cs" />
     <Page Include="controls\news\news.xaml">
