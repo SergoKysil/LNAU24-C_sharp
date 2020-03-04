@@ -38,7 +38,8 @@
 
         <Grid>
 
-            <Grid x:Name="grid_Content" Width="1015" Height="600" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FFFFFF" ></Grid>
+            <Grid x:Name="grid_Content" Width="1015" Height="600" VerticalAlignment="Bottom" HorizontalAlignment="Right" Background="#FFFFFF" >
+            </Grid>
             
             
             <Grid x:Name="Title_prog" Height="50" VerticalAlignment="Top" MouseLeftButtonDown="Title_prog_MouseLeftButtonDown">

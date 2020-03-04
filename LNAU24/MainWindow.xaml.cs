@@ -32,7 +32,7 @@ namespace LNAU24
 
             
         }
-
+        
         void btn_menu_open_Click(object sender, RoutedEventArgs e)
         {
             btn_Close_menu.Visibility = Visibility.Visible;

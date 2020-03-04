@@ -9,7 +9,7 @@ namespace LNAU24.controls
     public partial class news : UserControl
     {
 
-        MainWindow main;
+      
         public news()
         {
             InitializeComponent();

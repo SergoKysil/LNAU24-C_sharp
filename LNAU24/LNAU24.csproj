@@ -71,8 +71,10 @@
     <Compile Include="controls\singin\sing_in.xaml.cs">
       <DependentUpon>sing_in.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resources\types\cathedra.cs" />
-    <Compile Include="Resources\types\user.cs" />
+    <Compile Include="Resources\context\cathedra.cs" />
+    <Compile Include="Resources\context\file.cs" />
+    <Compile Include="Resources\context\news.cs" />
+    <Compile Include="Resources\context\user.cs" />
     <Page Include="controls\news\news.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
