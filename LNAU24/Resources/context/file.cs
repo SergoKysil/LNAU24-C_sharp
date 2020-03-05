@@ -33,9 +33,6 @@ namespace LNAU24.Resources.context
         string updated_At { get; set; }
 
 
-        void input_file (string Name_file, int ID, string Path, string Information)
-        {
-
-        }
+       
     }
 }

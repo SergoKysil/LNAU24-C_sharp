@@ -72,6 +72,7 @@
       <DependentUpon>sing_in.xaml</DependentUpon>
     </Compile>
     <Compile Include="Resources\context\cathedra.cs" />
+    <Compile Include="Resources\context\faculty.cs" />
     <Compile Include="Resources\context\file.cs" />
     <Compile Include="Resources\context\group.cs" />
     <Compile Include="Resources\context\news.cs" />

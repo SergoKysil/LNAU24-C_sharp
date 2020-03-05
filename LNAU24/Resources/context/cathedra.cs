@@ -11,15 +11,39 @@ namespace LNAU24.Resources.types
     {
         public cathedra(string Name, string Faculty, string Info, Image Image, Image[] Images)
         {
-            name = Name;
+            this.name = Name;
 
-            faculty = Faculty;
+            this.faculty = Faculty;
 
-            information = Info;
+            this.information = Info;
 
-            mainImage = Image;
+            this.mainImage = Image;
 
-            images = Images;
+            this.images = Images;
+        }
+
+        public cathedra(string Name, string Faculty)
+        {
+            this.name = Name;
+            this.faculty = Faculty;
+        }
+
+        public cathedra(string Name, string Faculty, string Info)
+        {
+            this.name = Name;
+            this.faculty = Faculty;
+            this.information = Info;
+        }
+
+        public cathedra(string Name, string Faculty, string Info, Image Image)
+        {
+            this.name = Name;
+
+            this.faculty = Faculty;
+
+            this.information = Info;
+
+            this.mainImage = Image;
         }
 
         public int ID { get; set; }
