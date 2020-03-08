@@ -11,10 +11,9 @@ namespace LNAU24.Resources.context
     {
 
 
-        file (string Name_file, string Path, string Information)
+        file (string Name_file, string Path)
         {
             this.name_file = Name_file;
-            this.information = Information;
             this.path = Path;
         }
 
@@ -22,17 +21,11 @@ namespace LNAU24.Resources.context
 
         string path { get; set; }
 
-        user owner;
-
         string name_file { get; set; }
 
-        string information { get; set; }
-
-        string created_At { get; set; }
-
-        string updated_At { get; set; }
+        user owner;
 
 
-       
+
     }
 }

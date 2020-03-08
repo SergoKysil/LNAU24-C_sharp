@@ -65,6 +65,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="controls\news\add_news.xaml.cs">
+      <DependentUpon>add_news.xaml</DependentUpon>
+    </Compile>
     <Compile Include="controls\news\news.xaml.cs">
       <DependentUpon>news.xaml</DependentUpon>
     </Compile>
@@ -75,8 +78,12 @@
     <Compile Include="Resources\context\faculty.cs" />
     <Compile Include="Resources\context\file.cs" />
     <Compile Include="Resources\context\group.cs" />
-    <Compile Include="Resources\context\news.cs" />
+    <Compile Include="Resources\context\news_context.cs" />
     <Compile Include="Resources\context\user.cs" />
+    <Page Include="controls\news\add_news.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="controls\news\news.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

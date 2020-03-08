@@ -54,15 +54,15 @@
                     <Label Content="LNAU24" VerticalAlignment="Center" FontFamily="Verdana" Foreground="#FFFFFF" HorizontalAlignment="Center" FontSize="30"></Label>
 
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                    <ListViewItem Padding="0"  x:Name="Minimized" VerticalAlignment="Top" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" MouseLeftButtonUp="Minimized_MouseLeftButtonUp" Cursor="Hand">
-                        <materialDesign:PackIcon Kind="WindowMinimize" Width="30" Height="30" Margin="10"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,6,0">
+                    <ListViewItem Padding="0" x:Name="Minimized" VerticalAlignment="Center" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" MouseLeftButtonUp="Minimized_MouseLeftButtonUp" Cursor="Hand"  >
+                        <materialDesign:PackIcon Kind="WindowMinimize" Width="20" Height="20" Margin="10"/>
                     </ListViewItem>
-                    <ListViewItem Padding="0"  x:Name="Fullscren" VerticalAlignment="Top" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" MouseLeftButtonUp="Fullscren_MouseLeftButtonUp" Cursor="Hand">
-                        <materialDesign:PackIcon Kind="Fullscreen" Width="30" Height="30" Margin="10"/>
+                    <ListViewItem Padding="0"  x:Name="Fullscren" VerticalAlignment="Center" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" MouseLeftButtonUp="Fullscren_MouseLeftButtonUp" Cursor="Hand" >
+                        <materialDesign:PackIcon Kind="Fullscreen" Width="20" Height="20" Margin="10" />
                     </ListViewItem>
-                    <ListViewItem Padding="0"  x:Name="Exit" VerticalAlignment="Top" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" MouseLeftButtonUp="Exit_MouseLeftButtonUp" Cursor="Hand">
-                        <materialDesign:PackIcon Kind="Close" Width="30" Height="30" Margin="10"/>
+                    <ListViewItem Padding="0"  x:Name="Exit" VerticalAlignment="Center" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" MouseLeftButtonUp="Exit_MouseLeftButtonUp" Cursor="Hand">
+                        <materialDesign:PackIcon Kind="Close" Width="20" Height="20" Margin="10" />
                     </ListViewItem>
                     
                     
@@ -112,7 +112,7 @@
 
 
 
-                        <ListViewItem>
+                        <ListViewItem MouseLeftButtonUp="ListViewItem_MouseLeftButtonUp_1">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="UserCardDetailsOutline"  Width="30" Height="30" Margin="10"/>
                                 <TextBlock Text="Абітурієнту" VerticalAlignment="Center" FontSize="16"  Margin="20 10"/>

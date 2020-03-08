@@ -6,11 +6,11 @@ using System.Windows.Media.Imaging;
 namespace LNAU24.controls
 {
 
-    public partial class news : UserControl
+    public partial class News : UserControl
     {
 
       
-        public news()
+        public News()
         {
             InitializeComponent();
         }

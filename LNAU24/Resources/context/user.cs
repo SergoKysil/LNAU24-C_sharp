@@ -46,7 +46,9 @@ namespace LNAU24.Resources.types
 
         public Image user_image { get; set; }
 
+        protected string password { get; set; }
 
+        bool status_in { get; set; }
 
 
     }
