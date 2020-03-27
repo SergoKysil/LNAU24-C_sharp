@@ -1,27 +1,13 @@
-﻿using LNAU24.Resources.context;
-using MaterialDesignThemes.Wpf;
+﻿using MaterialDesignThemes.Wpf;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace LNAU24.controls.news
 {
-    /// <summary>
-    /// Логика взаимодействия для add_news.xaml
-    /// </summary>
+    
     public partial class add_news : Window
     {
         public add_news()
@@ -40,12 +26,12 @@ namespace LNAU24.controls.news
             DragMove();
         }
 
-        news_context news_Context = new news_context();
+ 
 
 
         private void image_add_Click(object sender, RoutedEventArgs e)
         {
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            using (System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
                 openFileDialog.Multiselect = true;
@@ -58,7 +44,7 @@ namespace LNAU24.controls.news
                     Grid grid = new Grid();
                     
                     Image image = new Image();
-                    image.Source = new BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
+                    image.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
                     image.Margin = new Thickness(0,0,6,0);
                     image.Height = 85;
                     grid.Children.Add(image);
@@ -68,12 +54,12 @@ namespace LNAU24.controls.news
             }
         }
 
-        [DllImport("gdi32")]
+        [System.Runtime.InteropServices.DllImport("gdi32")]
         static extern int DeleteObject(IntPtr o);
-        public static BitmapSource loadBitmap(System.Drawing.Bitmap source)
+        public static System.Windows.Media.Imaging.BitmapSource loadBitmap(System.Drawing.Bitmap source)
         {
             IntPtr ip = source.GetHbitmap();
-            BitmapSource bs;
+            System.Windows.Media.Imaging.BitmapSource bs;
             try
             {
                 bs = System.Windows.Interop.Imaging.CreateBitmapSourceFromHBitmap(ip,
@@ -88,7 +74,7 @@ namespace LNAU24.controls.news
             return bs;
         }
 
-         public ImageSource IconFromFile(string fileName)
+         public System.Windows.Media.ImageSource IconFromFile(string fileName)
         {
             var icon = System.Drawing.Icon.ExtractAssociatedIcon(fileName);
             var bmp = icon.ToBitmap();
@@ -108,8 +94,8 @@ namespace LNAU24.controls.news
             System.Windows.Controls.Button button = new System.Windows.Controls.Button();
             button.VerticalAlignment = VerticalAlignment.Top;
             button.HorizontalAlignment = System.Windows.HorizontalAlignment.Right;
-            button.Name = "Dell_added";
-            button.Background = Brushes.DarkGray;
+            button.Name = "Remove_btn";
+            button.Background = System.Windows.Media.Brushes.DarkGray;
             button.BorderBrush = null;
             button.Width = 20;
             button.Height = 20;
@@ -120,10 +106,10 @@ namespace LNAU24.controls.news
             return button;
         }
 
-
+        private System.Windows.Forms.Control controlToRemove = null;
         private void file_add_Click(object sender, RoutedEventArgs e)
         {      
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            using (System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
                 openFileDialog.Filter = "Documents Files(*.doc;*.docx;*.xls;*.xlsx;*.ppt;.txt;*.zip;*.rar)|*.doc;*.docx;*.xls;*.xlsx;*.ppt;.txt;*.zip;*.rar";
@@ -148,18 +134,23 @@ namespace LNAU24.controls.news
 
                     grid.Children.Add(stackPanel);
                     grid.Children.Add(Get_button());
-                    Body_attached_files.Children.Add(grid);
+                    Body_attached_files.Children.Add(grid); grid.Width = 20; grid.Height = 20; grid.Background = System.Windows.Media.Brushes.Red;
+                    grid.Children.Clear();
+                    grid.Background = System.Windows.Media.Brushes.Red;
+                   
                     
+
                 }
             }
                
 
         }
 
+
+
+
         private void Save_news_Click(object sender, RoutedEventArgs e)
         {
-            news_Context.title = this.Tb_title.Text;
-            news_Context.body = this.Tb_body.Text;
             
         }
     }

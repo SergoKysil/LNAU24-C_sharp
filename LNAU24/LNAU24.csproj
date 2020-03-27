@@ -74,12 +74,12 @@
     <Compile Include="controls\singin\sing_in.xaml.cs">
       <DependentUpon>sing_in.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Resources\context\cathedra.cs" />
-    <Compile Include="Resources\context\faculty.cs" />
-    <Compile Include="Resources\context\file.cs" />
-    <Compile Include="Resources\context\group.cs" />
-    <Compile Include="Resources\context\news_context.cs" />
-    <Compile Include="Resources\context\user.cs" />
+    <Compile Include="Models\Cathedra.cs" />
+    <Compile Include="Models\Faculty.cs" />
+    <Compile Include="Models\Group.cs" />
+    <Compile Include="Models\News.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="ViewModels\Base\BaseViewModel.cs" />
     <Page Include="controls\news\add_news.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,6 +170,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\image\Tempnews\ing3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="View\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.0.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.1\build\MaterialDesignThemes.targets')" />
