@@ -1,16 +1,10 @@
-﻿using System.Drawing;
+﻿using LNAU24.Base;
+using System.Collections.Generic;
 
 namespace LNAU24.Models
 {
-    public class Group
+    public class Group : BaseModel
     {
-        public int ID { get; set; }
-
-        public string GroupName { get; set; }
-
-        public string Information { get; set; }
-
-        public Image GroupImage { get; set; }
-
+        public List<User> Users;
     }
 }

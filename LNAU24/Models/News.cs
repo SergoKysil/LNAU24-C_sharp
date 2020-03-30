@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Drawing;
 
 namespace LNAU24.Models
 {
@@ -15,6 +16,8 @@ namespace LNAU24.Models
         public int Views { get; set; }
 
         public List<string> Files { get; set; }
+
+        public List<Image> Images { get; set; }
 
     }
 }

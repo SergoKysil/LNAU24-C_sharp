@@ -1,11 +1,11 @@
 ﻿using LNAU24.Models;
-using LNAU24.ViewModels.Base;
+using LNAU24.Base;
 using System.Collections.Generic;
 using System.Drawing;
 
 namespace LNAU24.ViewModels
 {
-    public class UserViewModel : BaseViewModel
+    public class BaseUserViewModel : BaseViewModel
     {
         #region User
 

@@ -108,7 +108,7 @@ namespace LNAU24.controls.news
             return button;
         }
 
-        private System.Windows.Forms.Control controlToRemove = null;
+
         private void file_add_Click(object sender, RoutedEventArgs e)
         {      
             using (System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog())

@@ -46,7 +46,7 @@ namespace LNAU24
             btn_Open_menu.Visibility = Visibility.Visible;        
         }
 
-        News magazine = new News();
+        readonly News magazine = new News();
         
        
 
@@ -73,8 +73,10 @@ namespace LNAU24
 
         private void ListViewItem_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            sing_in sing_In = new sing_in();
-            sing_In.Owner = this;
+            sing_in sing_In = new sing_in
+            {
+                Owner = this
+            };
             sing_In.Show();
 
         }

@@ -1,15 +1,11 @@
-﻿using System.Drawing;
+﻿using LNAU24.Base;
+using System.Collections.Generic;
+using System.Drawing;
 
 namespace LNAU24.Models
 {
-    public class Cathedra
+    public class Cathedra : BaseModel
     {
-        public int ID { get; set; }
-
-        public string CathedraName { get; set; }
-
-        public string Information { get; set; }
-
-        public Image MainImageCathedra { get; set; }
+        
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace LNAU24.ViewModels.Base
+namespace LNAU24.Base
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
