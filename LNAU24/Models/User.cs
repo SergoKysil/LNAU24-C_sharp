@@ -12,7 +12,7 @@ namespace LNAU24.Models
 
         public string UserEmail { get; set; }
 
-        protected string Password { get; set; }
+        private string Password { get; set; }
 
         public Image UserImage { get; set; }
 

@@ -42,11 +42,13 @@ namespace LNAU24.controls.news
                 if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 {
                     Grid grid = new Grid();
-                    
-                    Image image = new Image();
-                    image.Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute));
-                    image.Margin = new Thickness(0,0,6,0);
-                    image.Height = 85;
+
+                    Image image = new Image
+                    {
+                        Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute)),
+                        Margin = new Thickness(0, 0, 6, 0),
+                        Height = 85
+                    };
                     grid.Children.Add(image);
                     grid.Children.Add(Get_button());
                     Body_attached_files.Children.Add(grid);
