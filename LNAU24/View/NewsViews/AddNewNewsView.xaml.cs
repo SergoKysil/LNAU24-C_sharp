@@ -5,12 +5,12 @@ using System.Windows.Controls;
 using System.Windows.Forms;
 using System.Windows.Input;
 
-namespace LNAU24.controls.news
+namespace LNAU24.Views.NewsViews
 {
     
-    public partial class add_news : Window
+    public partial class AddNewNewsView : Window
     {
-        public add_news()
+        public AddNewNewsView()
         {
             InitializeComponent();
             
@@ -93,25 +93,27 @@ namespace LNAU24.controls.news
                 Foreground = System.Windows.Media.Brushes.White
             };
 
-            System.Windows.Controls.Button button = new System.Windows.Controls.Button();
-            button.VerticalAlignment = VerticalAlignment.Top;
-            button.HorizontalAlignment = System.Windows.HorizontalAlignment.Right;
-            button.Name = "Remove_btn";
-            button.Background = System.Windows.Media.Brushes.DarkGray;
-            button.BorderBrush = null;
-            button.Width = 20;
-            button.Height = 20;
-            button.Content = icon;
-            button.Padding = new Thickness(0);
-            button.Margin = new Thickness(0,0,6,0);
-            button.Cursor = System.Windows.Input.Cursors.Hand;
+            System.Windows.Controls.Button button = new System.Windows.Controls.Button
+            {
+                VerticalAlignment = VerticalAlignment.Top,
+                HorizontalAlignment = System.Windows.HorizontalAlignment.Right,
+                Name = "Remove_btn",
+                Background = System.Windows.Media.Brushes.DarkGray,
+                BorderBrush = null,
+                Width = 20,
+                Height = 20,
+                Content = icon,
+                Padding = new Thickness(0),
+                Margin = new Thickness(0, 0, 6, 0),
+                Cursor = System.Windows.Input.Cursors.Hand
+            };
             return button;
         }
 
 
-        private void file_add_Click(object sender, RoutedEventArgs e)
+        private void file_add_Click (object sender, RoutedEventArgs e)
         {      
-            using (System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog())
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
                 openFileDialog.InitialDirectory = "c:\\";
                 openFileDialog.Filter = "Documents Files(*.doc;*.docx;*.xls;*.xlsx;*.ppt;.txt;*.zip;*.rar)|*.doc;*.docx;*.xls;*.xlsx;*.ppt;.txt;*.zip;*.rar";
@@ -121,16 +123,22 @@ namespace LNAU24.controls.news
                 if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
                 { 
                     Grid grid = new Grid();
-                   
-                    Image image = new Image();
-                    image.Source = IconFromFile(openFileDialog.FileName);
-                    image.Margin = new Thickness(0, 0, 6, 0);
-                    image.Height = 65;
-                    System.Windows.Controls.Label name_file = new System.Windows.Controls.Label();
-                    name_file.Content = System.IO.Path.GetFileNameWithoutExtension(openFileDialog.FileName);
-                   
-                    StackPanel stackPanel = new StackPanel();
-                    stackPanel.Orientation = System.Windows.Controls.Orientation.Vertical;
+
+                    Image image = new Image
+                    {
+                        Source = IconFromFile(openFileDialog.FileName),
+                        Margin = new Thickness(0, 0, 6, 0),
+                        Height = 65
+                    };
+                    System.Windows.Controls.Label name_file = new System.Windows.Controls.Label
+                    {
+                        Content = System.IO.Path.GetFileNameWithoutExtension(openFileDialog.FileName)
+                    };
+
+                    StackPanel stackPanel = new StackPanel
+                    {
+                        Orientation = System.Windows.Controls.Orientation.Vertical
+                    };
                     stackPanel.Children.Add(image);
                     stackPanel.Children.Add(name_file);
 

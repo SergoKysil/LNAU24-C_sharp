@@ -73,14 +73,16 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Base\BaseModel.cs" />
-    <Compile Include="controls\news\add_news.xaml.cs">
-      <DependentUpon>add_news.xaml</DependentUpon>
+    <Compile Include="Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\UserViewModels\UserSingUpViewModel.cs" />
+    <Compile Include="View\NewsViews\AddNewNewsView.xaml.cs">
+      <DependentUpon>AddNewNewsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\news\news.xaml.cs">
-      <DependentUpon>news.xaml</DependentUpon>
+    <Compile Include="View\NewsViews\NewsView.xaml.cs">
+      <DependentUpon>NewsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="controls\singin\sing_in.xaml.cs">
-      <DependentUpon>sing_in.xaml</DependentUpon>
+    <Compile Include="View\UserViews\UserSingIn.xaml.cs">
+      <DependentUpon>UserSingIn.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Cathedra.cs" />
     <Compile Include="Models\Faculty.cs" />
@@ -89,21 +91,21 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Base\BaseViewModel.cs" />
     <Compile Include="Validator\UserValidator.cs" />
-    <Compile Include="ViewModels\BaseNewsViewModel.cs" />
-    <Compile Include="ViewModels\BaseUserViewModel.cs" />
-    <Page Include="controls\news\add_news.xaml">
+    <Compile Include="ViewModels\NewsViewModels\BaseNewsViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModels\BaseUserViewModel.cs" />
+    <Page Include="View\NewsViews\AddNewNewsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\news\news.xaml">
+    <Page Include="View\NewsViews\NewsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="controls\singup\sing_up.xaml">
+    <Page Include="View\UserViews\UserSingUp.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="MainWindow.xaml">
+    <Page Include="View\Main\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -111,14 +113,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="controls\singup\sing_up.xaml.cs">
-      <DependentUpon>sing_up.xaml</DependentUpon>
+    <Compile Include="View\UserViews\UserSingUp.xaml.cs">
+      <DependentUpon>UserSingUp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="View\Main\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="controls\singin\sing_in.xaml">
+    <Page Include="View\UserViews\UserSingIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -182,9 +184,7 @@
   <ItemGroup>
     <Resource Include="Resources\image\Tempnews\ing3.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="View\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\MaterialDesignThemes.3.0.1\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.3.0.1\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

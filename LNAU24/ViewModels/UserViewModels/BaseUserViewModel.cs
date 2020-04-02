@@ -2,11 +2,17 @@
 using LNAU24.Base;
 using System.Collections.Generic;
 using System.Drawing;
+using FluentValidation;
 
-namespace LNAU24.ViewModels
+namespace LNAU24.ViewModels.UserViewModels
 {
     public class BaseUserViewModel : BaseViewModel
     {
+
+
+        public IValidator _userValidator;
+
+
         #region User
 
         public User _user;

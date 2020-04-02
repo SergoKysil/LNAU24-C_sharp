@@ -3,14 +3,14 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
 
-namespace LNAU24.controls
+namespace LNAU24.View.NewsViews
 {
 
-    public partial class News : UserControl
+    public partial class NewsView : UserControl
     {
 
       
-        public News()
+        public NewsView()
         {
             InitializeComponent();
         }

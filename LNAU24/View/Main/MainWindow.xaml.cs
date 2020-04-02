@@ -1,23 +1,11 @@
-﻿using LNAU24.controls;
-using LNAU24.controls.news;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LNAU24.View.NewsViews;
+using LNAU24.View.UserViews;
+using LNAU24.Views.NewsViews;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Forms;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 
-namespace LNAU24
+namespace LNAU24.View.Main
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
@@ -27,11 +15,6 @@ namespace LNAU24
         public MainWindow()
         {
             InitializeComponent();
-
-
-            
-
-            
         }
         
         void btn_menu_open_Click(object sender, RoutedEventArgs e)
@@ -46,7 +29,7 @@ namespace LNAU24
             btn_Open_menu.Visibility = Visibility.Visible;        
         }
 
-        readonly News magazine = new News();
+        readonly NewsView magazine = new NewsView();
         
        
 
@@ -73,7 +56,7 @@ namespace LNAU24
 
         private void ListViewItem_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            sing_in sing_In = new sing_in
+            UserSingIn sing_In = new UserSingIn
             {
                 Owner = this
             };
@@ -117,7 +100,7 @@ namespace LNAU24
 
         private void ListViewItem_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
         {
-            add_news add_news = new add_news();
+            AddNewNewsView add_news = new AddNewNewsView();
             add_news.Show();
 
         }

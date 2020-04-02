@@ -8,9 +8,9 @@ namespace LNAU24.Validator
     {
         public UserValidator()
         {
-            RuleFor(u => u.UserName).Must(n => ValidateString(n)).WithMessage("Поле не можу бути пустим!");
-            RuleFor(u => u.UserSurname).Must(s => ValidateString(s)).WithMessage("Поле не можу бути пустим");
-            RuleFor(u => u.UserEmail).EmailAddress(EmailValidationMode.Net4xRegex).WithMessage("Введіть коректний E-mail!");     
+            RuleFor(u => u.UserSurname).Must(s => ValidateString(s)).WithMessage("Прізвище не можу бути пустим");
+            RuleFor(u => u.UserName).Must(n => ValidateString(n)).WithMessage("Ім'я не можу бути пустим!");
+            RuleFor(u => u.UserEmail).Must(e => ValidateString(e)).EmailAddress(EmailValidationMode.Net4xRegex).WithMessage("Введіть коректний E-mail!");
         }
 
 

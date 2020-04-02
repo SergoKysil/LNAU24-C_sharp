@@ -1,26 +1,15 @@
-﻿using LNAU24.controls;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using LNAU24.Views.UserViews;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
-namespace LNAU24
+namespace LNAU24.View.UserViews
 {
     /// <summary>
     /// Логика взаимодействия для sing_in.xaml
     /// </summary>
-    public partial class sing_in : Window
+    public partial class UserSingIn : Window
     {
-        public sing_in()
+        public UserSingIn()
         {
             InitializeComponent();
         }
@@ -41,7 +30,7 @@ namespace LNAU24
         private void btn_Create_account_Click(object sender, RoutedEventArgs e)
         {
             Close();
-            sing_up reg = new sing_up();
+            UserSingUp reg = new UserSingUp();
             reg.Show();
         }
     }

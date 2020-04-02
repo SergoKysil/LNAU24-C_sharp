@@ -1,12 +1,9 @@
 ﻿using LNAU24.Base;
 using LNAU24.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
 
-namespace LNAU24.ViewModels
+namespace LNAU24.ViewModels.NewsViewModels
 {
     public class BaseNewsViewModel : BaseViewModel
     {
@@ -52,6 +49,27 @@ namespace LNAU24.ViewModels
             {
                 _news.Author = value;
                 NotifyPropertyChanged("Author");
+            }
+        }
+
+        public List<Image> Images
+        {
+            get => _news.Images;
+            set
+            {
+                _news.Images = value;
+                NotifyPropertyChanged("Images");
+            }
+        }
+
+        public List<News> _newsList;
+        public List<News> NewsList
+        {
+            get => _newsList;
+            set
+            {
+                _newsList = value;
+                NotifyPropertyChanged("NewsList");
             }
         }
 
