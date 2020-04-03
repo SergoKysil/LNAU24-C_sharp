@@ -33,17 +33,17 @@
                     <TextBox Margin="10" 
                              FontSize="16"                               
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                             materialDesign:HintAssist.Hint="Прізвище" Text="{Binding UserName}">
+                             materialDesign:HintAssist.Hint="Прізвище" Text="{Binding UserSurname}">
                     </TextBox>
                     <TextBox Margin="10" 
                              FontSize="16"                               
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                             materialDesign:HintAssist.Hint="Ім'я" Text="{Binding UserSurname}">
+                             materialDesign:HintAssist.Hint="Ім'я" Text="{Binding UserName}" >
                     </TextBox>
                     <TextBox Margin="10" 
                              FontSize="16"                               
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                             materialDesign:HintAssist.Hint="E-mail" Text="{Binding UserEmail}">
+                             materialDesign:HintAssist.Hint="E-mailа" Text="{Binding UserEmail}">
                     </TextBox>
                     <PasswordBox Margin="10" 
                              FontSize="16"                               

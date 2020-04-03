@@ -74,6 +74,7 @@
     </ApplicationDefinition>
     <Compile Include="Base\BaseModel.cs" />
     <Compile Include="Base\RelayCommand.cs" />
+    <Compile Include="ViewModels\UserViewModels\UserSingInViewModel.cs" />
     <Compile Include="ViewModels\UserViewModels\UserSingUpViewModel.cs" />
     <Compile Include="View\NewsViews\AddNewNewsView.xaml.cs">
       <DependentUpon>AddNewNewsView.xaml</DependentUpon>
