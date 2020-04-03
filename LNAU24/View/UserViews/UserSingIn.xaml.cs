@@ -1,4 +1,5 @@
-﻿using LNAU24.Views.UserViews;
+﻿using LNAU24.ViewModels.UserViewModels;
+using LNAU24.Views.UserViews;
 using System.Windows;
 using System.Windows.Input;
 
@@ -12,6 +13,7 @@ namespace LNAU24.View.UserViews
         public UserSingIn()
         {
             InitializeComponent();
+            DataContext = new UserSingInViewModel();
         }
 
         

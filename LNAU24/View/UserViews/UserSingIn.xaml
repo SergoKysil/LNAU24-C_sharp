@@ -30,7 +30,7 @@
                     <TextBox Margin="15" 
                              FontSize="16"                               
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" 
-                             materialDesign:HintAssist.Hint="E-mail">
+                             materialDesign:HintAssist.Hint="E-mail" Text="{Binding UserEmail}">
                     </TextBox>
 
                     <PasswordBox Margin="15" 

@@ -1,4 +1,5 @@
-﻿using MaterialDesignThemes.Wpf;
+﻿using LNAU24.ViewModels.NewsViewModels;
+using MaterialDesignThemes.Wpf;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,7 +14,7 @@ namespace LNAU24.Views.NewsViews
         public AddNewNewsView()
         {
             InitializeComponent();
-            
+            DataContext = new AddNewsViewModel();
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -156,12 +157,5 @@ namespace LNAU24.Views.NewsViews
 
         }
 
-
-
-
-        private void Save_news_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
     }
 }

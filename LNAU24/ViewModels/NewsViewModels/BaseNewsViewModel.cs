@@ -1,4 +1,5 @@
-﻿using LNAU24.Base;
+﻿using FluentValidation;
+using LNAU24.Base;
 using LNAU24.Models;
 using System.Collections.Generic;
 using System.Drawing;
@@ -7,6 +8,10 @@ namespace LNAU24.ViewModels.NewsViewModels
 {
     public class BaseNewsViewModel : BaseViewModel
     {
+
+        public IValidator _newsValidator;
+
+
         #region News
 
         public News _news;

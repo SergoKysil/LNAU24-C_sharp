@@ -16,16 +16,12 @@
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="81*"/>
-                <ColumnDefinition Width="19*"/>
-            </Grid.ColumnDefinitions>
-            <StackPanel Grid.ColumnSpan="2">
+            <StackPanel >
                 <Grid x:Name="title" Background="Transparent" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" MouseDown="title_MouseDown" >
                     <Label Content="Додавання новини" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="30" FontFamily="Gabriola"></Label>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <Button Margin="6" Padding="0" Style="{StaticResource MaterialDesignFlatLightBgButton}"  x:Name="Save_news" VerticalAlignment="Stretch" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand" Click="Save_news_Click"  >
+                        <Button Margin="6" Padding="0" Style="{StaticResource MaterialDesignFlatLightBgButton}"  x:Name="Save_news" VerticalAlignment="Stretch" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand" Command="{Binding SaveNewsCommand}" >
                             <materialDesign:PackIcon Kind="ContentSaveOutline" Width="20" Height="20" Margin="6" />
                         </Button>
                         <materialDesign:PopupBox HorizontalAlignment="Right" Margin="6" StaysOpen="False" PlacementMode="BottomAndAlignRightEdges" >
@@ -49,7 +45,7 @@
                 <Border x:Name="body" CornerRadius="15" Background="White" Margin="30,6,30,6"   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="455">
                     <Grid Margin="20,20,20,20" >
                         <StackPanel>
-                            <TextBox x:Name="Tb_title" Margin="15" 
+                            <TextBox x:Name="Tb_title" Margin="15" Text="{Binding Title}"
                                      Width="670"
                                      FontFamily="{StaticResource MaterialDesignFont}"
                              FontSize="16" 
@@ -59,7 +55,7 @@
                              materialDesign:HintAssist.Hint="Заголовок">
                             </TextBox>
 
-                            <TextBox x:Name="Tb_body" Margin="15" 
+                            <TextBox x:Name="Tb_body" Margin="15" Text="{Binding Body}"
                                       Style="{StaticResource  MaterialDesignFloatingHintTextBox}" 
                              FontSize="16" FontFamily="{StaticResource MaterialDesignFont}"
                                     
