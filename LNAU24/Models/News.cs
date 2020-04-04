@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 
 namespace LNAU24.Models
@@ -17,7 +18,7 @@ namespace LNAU24.Models
 
         public List<string> Files { get; set; }
 
-        public List<Image> Images { get; set; }
+        public ObservableCollection<Image> Images { get; set; }
 
     }
 }

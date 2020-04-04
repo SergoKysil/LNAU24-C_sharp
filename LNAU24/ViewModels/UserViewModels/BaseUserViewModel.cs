@@ -1,8 +1,8 @@
 ﻿using LNAU24.Models;
 using LNAU24.Base;
-using System.Collections.Generic;
 using System.Drawing;
 using FluentValidation;
+using System.Collections.ObjectModel;
 
 namespace LNAU24.ViewModels.UserViewModels
 {
@@ -68,8 +68,8 @@ namespace LNAU24.ViewModels.UserViewModels
         }
 
 
-        public List<User> _userList;
-        public List<User> UsersList
+        public ObservableCollection<User> _userList;
+        public ObservableCollection<User> UsersList
         {
             get => _userList;
             set

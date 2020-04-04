@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using LNAU24.Base;
 using LNAU24.Models;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Drawing;
 
 namespace LNAU24.ViewModels.NewsViewModels
@@ -57,7 +57,7 @@ namespace LNAU24.ViewModels.NewsViewModels
             }
         }
 
-        public List<Image> Images
+        public ObservableCollection<Image> Images
         {
             get => _news.Images;
             set
@@ -67,8 +67,8 @@ namespace LNAU24.ViewModels.NewsViewModels
             }
         }
 
-        public List<News> _newsList;
-        public List<News> NewsList
+        public ObservableCollection<News> _newsList;
+        public ObservableCollection<News> NewsList
         {
             get => _newsList;
             set

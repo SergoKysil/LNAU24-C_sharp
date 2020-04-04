@@ -1,6 +1,4 @@
-﻿
-
-using LNAU24.Base;
+﻿using LNAU24.Base;
 using LNAU24.Models;
 using LNAU24.Validator;
 using System.Windows.Input;
@@ -92,7 +90,7 @@ namespace LNAU24.ViewModels.UserViewModels
         #endregion
 
 
-        #region Save me
+        #region Remember me
         //TODO: Thin how do this with secure
 
         #endregion
