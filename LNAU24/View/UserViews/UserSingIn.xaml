@@ -7,13 +7,13 @@
         mc:Ignorable="d"
         xmlns:local ="clr-namespace:LNAU24"
         Title="Sing_in" Height="600" Width="450"  Icon="/Resources/image/logos/Logoico.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid MouseDown="Grid_MouseDown">
+    <Grid >
             
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="Black" Offset="0"/>
                 <GradientStop Color="#FF09B018" Offset="1"/>
-            </LinearGradientBrush>
+            </LinearGradientBrush> 
         </Grid.Background>
         <StackPanel Margin="50">
 
@@ -57,7 +57,7 @@
 
                     <StackPanel>
 
-                        <Button x:Name="btn_Sing_in" 
+                        <Button x:Name="btn_Sing_in" Command="{Binding SingInUserConfirmedCommand}"
                             Content="Увійти" 
                             Margin="40 5"
                             Style="{StaticResource MaterialDesignFlatDarkBgButton}">

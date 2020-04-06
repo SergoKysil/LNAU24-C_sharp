@@ -24,10 +24,7 @@ namespace LNAU24.View.UserViews
 
         }
 
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
+
 
         private void btn_Create_account_Click(object sender, RoutedEventArgs e)
         {

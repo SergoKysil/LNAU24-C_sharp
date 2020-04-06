@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:local ="clr-namespace:LNAU24"
         Title="sing_up" Height="640" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Icon="/Resources/image/logos/Logoico.ico">
-    <Grid MouseDown="Grid_MouseDown">
+    <Grid >
 
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">

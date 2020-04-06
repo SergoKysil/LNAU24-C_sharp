@@ -22,7 +22,7 @@ namespace LNAU24.ViewModels.NewsViewModels
             set
             {
                 _news.Title = value;
-                NotifyPropertyChanged("Title");
+                NotifyPropertyChanged(nameof(Title));
             }
         }
 
@@ -32,7 +32,7 @@ namespace LNAU24.ViewModels.NewsViewModels
             set
             {
                 _news.Body = value;
-                NotifyPropertyChanged("Body");
+                NotifyPropertyChanged(nameof(Body));
             }
         }
 
@@ -42,7 +42,7 @@ namespace LNAU24.ViewModels.NewsViewModels
             set
             {
                 _news.Views = value;
-                NotifyPropertyChanged("Views");
+                NotifyPropertyChanged(nameof(Views));
             }
         }
 
@@ -53,7 +53,7 @@ namespace LNAU24.ViewModels.NewsViewModels
             set
             {
                 _news.Author = value;
-                NotifyPropertyChanged("Author");
+                NotifyPropertyChanged(nameof(Author));
             }
         }
 
@@ -63,7 +63,7 @@ namespace LNAU24.ViewModels.NewsViewModels
             set
             {
                 _news.Images = value;
-                NotifyPropertyChanged("Images");
+                NotifyPropertyChanged(nameof(Images));
             }
         }
 
@@ -74,7 +74,7 @@ namespace LNAU24.ViewModels.NewsViewModels
             set
             {
                 _newsList = value;
-                NotifyPropertyChanged("NewsList");
+                NotifyPropertyChanged(nameof(NewsList));
             }
         }
 

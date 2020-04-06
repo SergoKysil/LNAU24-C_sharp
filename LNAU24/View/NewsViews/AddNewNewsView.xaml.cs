@@ -17,45 +17,13 @@ namespace LNAU24.Views.NewsViews
             DataContext = new AddNewsViewModel();
         }
 
-        private void Exit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
-        private void title_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-
- 
+  
 
 
-        private void image_add_Click(object sender, RoutedEventArgs e)
-        {
-            using (System.Windows.Forms.OpenFileDialog openFileDialog = new System.Windows.Forms.OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Multiselect = true;
-                openFileDialog.Filter = "Image Files(*.bmp;*.jpg;*.gif;*.png;*.jpeg;*.jfif)|*.bmp;*.jpg;*.gif;*.png;*.jpeg;*.jfif";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
 
-                if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                {
-                    Grid grid = new Grid();
 
-                    Image image = new Image
-                    {
-                        Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute)),
-                        Margin = new Thickness(0, 0, 6, 0),
-                        Height = 85
-                    };
-                    grid.Children.Add(image);
-                    grid.Children.Add(Get_button());
-                    Body_attached_files.Children.Add(grid);
-                }
-            }
-        }
+
+
 
         [System.Runtime.InteropServices.DllImport("gdi32")]
         static extern int DeleteObject(IntPtr o);
@@ -112,50 +80,7 @@ namespace LNAU24.Views.NewsViews
         }
 
 
-        private void file_add_Click (object sender, RoutedEventArgs e)
-        {      
-            using (OpenFileDialog openFileDialog = new OpenFileDialog())
-            {
-                openFileDialog.InitialDirectory = "c:\\";
-                openFileDialog.Filter = "Documents Files(*.doc;*.docx;*.xls;*.xlsx;*.ppt;.txt;*.zip;*.rar)|*.doc;*.docx;*.xls;*.xlsx;*.ppt;.txt;*.zip;*.rar";
-                openFileDialog.FilterIndex = 2;
-                openFileDialog.RestoreDirectory = true;
-
-                if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                { 
-                    Grid grid = new Grid();
-
-                    Image image = new Image
-                    {
-                        Source = IconFromFile(openFileDialog.FileName),
-                        Margin = new Thickness(0, 0, 6, 0),
-                        Height = 65
-                    };
-                    System.Windows.Controls.Label name_file = new System.Windows.Controls.Label
-                    {
-                        Content = System.IO.Path.GetFileNameWithoutExtension(openFileDialog.FileName)
-                    };
-
-                    StackPanel stackPanel = new StackPanel
-                    {
-                        Orientation = System.Windows.Controls.Orientation.Vertical
-                    };
-                    stackPanel.Children.Add(image);
-                    stackPanel.Children.Add(name_file);
-
-                    grid.Children.Add(stackPanel);
-                    grid.Children.Add(Get_button());
-                    Body_attached_files.Children.Add(grid); grid.Width = 20; grid.Height = 20; grid.Background = System.Windows.Media.Brushes.Red;
-                    grid.Children.Clear();
-                    grid.Background = System.Windows.Media.Brushes.Red;
-                   
-                    
-
-                }
-            }
-               
-
-        }
+       
 
     }
 }

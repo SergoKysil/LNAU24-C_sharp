@@ -4,8 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+x:Name="Add_news"
        xmlns:local ="clr-namespace:LNAU24"
         mc:Ignorable="d"
+      
         Title="add_news" Height="700" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Border>
@@ -17,24 +19,24 @@
         </Border.Background>
         <Grid>
             <StackPanel >
-                <Grid x:Name="title" Background="Transparent" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" MouseDown="title_MouseDown" >
+                <Grid x:Name="title" Background="Transparent" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" >
                     <Label Content="Додавання новини" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="30" FontFamily="Gabriola"></Label>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
-                        <Button Margin="6" Padding="0" Style="{StaticResource MaterialDesignFlatLightBgButton}"  x:Name="Save_news" VerticalAlignment="Stretch" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand" Command="{Binding SaveNewsCommand}" >
-                            <materialDesign:PackIcon Kind="ContentSaveOutline" Width="20" Height="20" Margin="6" />
+                        <Button Margin="6" Padding="0" Style="{StaticResource MaterialDesignFlatLightBgButton}"  x:Name="Save_news" VerticalAlignment="Stretch" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand"  Command="{Binding SaveNewsCommand, Mode=OneWay}">
+                            <materialDesign:PackIcon  Kind="ContentSaveOutline" Width="20" Height="20" Margin="6" />
                         </Button>
                         <materialDesign:PopupBox HorizontalAlignment="Right" Margin="6" StaysOpen="False" PlacementMode="BottomAndAlignRightEdges" >
                             <materialDesign:PopupBox.ToggleContent>
                                 <materialDesign:PackIcon Kind="AttachmentVertical" Foreground="White"  Width="20" Height="20" Margin="6" ></materialDesign:PackIcon>
                             </materialDesign:PopupBox.ToggleContent>
                             <StackPanel>
-                                <Button x:Name="image_add" Content="Зображення"  Style="{StaticResource MaterialDesignFlatButton}" Click="image_add_Click"></Button>
-                                <Button x:Name="file_add" Content="Документ" Style="{StaticResource MaterialDesignFlatButton}" Click="file_add_Click"></Button>
+                                <Button x:Name="image_add" Content="Зображення"  Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding AddImageCommand}"></Button>
+                                <Button x:Name="file_add" Content="Документ" Style="{StaticResource MaterialDesignFlatButton}" Command="{Binding AddFileCommand}"></Button>
                             </StackPanel>
                         </materialDesign:PopupBox>
 
-                        <Button Margin="6,6,12,6" Padding="0" Style="{StaticResource MaterialDesignFlatLightBgButton}"  x:Name="Exit" VerticalAlignment="Stretch" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand" Click="Exit_Click"  >
+                        <Button Margin="6,6,12,6" Padding="0" Style="{StaticResource MaterialDesignFlatLightBgButton}"  x:Name="Exit" VerticalAlignment="Stretch" HorizontalAlignment="Right"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" Cursor="Hand" Command="{Binding CloseWindowCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=Add_news}" >
                             <materialDesign:PackIcon Kind="Close" Width="20" Height="20" Margin="6" />
                         </Button>
 

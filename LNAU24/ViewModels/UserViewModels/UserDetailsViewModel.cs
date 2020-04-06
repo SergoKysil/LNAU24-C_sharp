@@ -1,5 +1,4 @@
-﻿using LNAU24.Base;
-using LNAU24.Models;
+﻿using LNAU24.Models;
 using LNAU24.Validator;
 using System.Windows.Input;
 
@@ -27,7 +26,7 @@ namespace LNAU24.ViewModels.UserViewModels
             _userValidator = new UserValidator();
 
             //TODO: Add functions to commands more
-            EditUserDetailsCommand = new RelayCommand(EditDetails);
+           // EditUserDetailsCommand = new RelayCommand(EditDetails);
 
         }
         #endregion

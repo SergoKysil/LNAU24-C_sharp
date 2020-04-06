@@ -1,14 +1,21 @@
-﻿using LNAU24.Base;
+﻿
+using LNAU24.Base;
 using LNAU24.Models;
 using LNAU24.Validator;
 using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace LNAU24.ViewModels.NewsViewModels
 {
     public class AddNewsViewModel : BaseNewsViewModel
     {
-
+        #region Fields
+        /// <summary>
+        /// This field was use to open file dialog with filters
+        /// </summary>
+        string Filter = null;
+        #endregion
 
         #region Public Commands
         /// <summary>
@@ -42,10 +49,12 @@ namespace LNAU24.ViewModels.NewsViewModels
             _newsValidator = new NewsValidator();
             _news = new News();
 
+
+
             SaveNewsCommand = new RelayCommand(SaveNews);
             AddImageCommand = new RelayCommand(AddImage);
             AddFileCommand = new RelayCommand(AddFile);
-            CloseWindowCommand = new RelayCommand(CloseWindow);
+            CloseWindowCommand = new RelayCommand<Window>(CloseWindow);
 
 
         }
@@ -62,12 +71,12 @@ namespace LNAU24.ViewModels.NewsViewModels
             if (validateResults.IsValid)
             {
                 //TODO: Logic to save will be here
-                MessageBox.Show("");
+                System.Windows.MessageBox.Show("Successful save");
             }
             else
             {
                 //If not valid
-                MessageBox.Show(validateResults.Errors[0].ErrorMessage, "Додавання новини", MessageBoxButton.OK);
+                System.Windows.MessageBox.Show(validateResults.Errors[0].ErrorMessage, "Додавання новини", MessageBoxButton.OK);
             }
 
         }
@@ -77,7 +86,8 @@ namespace LNAU24.ViewModels.NewsViewModels
         /// </summary>
         private void AddImage()
         {
-            //TODO: Some logic to add image
+            Filter = "Image Files(*.bmp;*.jpg;*.gif;*.png;*.jpeg;*.jfif)|*.bmp;*.jpg;*.gif;*.png;*.jpeg;*.jfif";
+            OpenFilesDialog(Filter);
         }
 
         /// <summary>
@@ -85,20 +95,59 @@ namespace LNAU24.ViewModels.NewsViewModels
         /// </summary>
         private void AddFile()
         {
-            //TODO: The same logic as add image but  for file
+            Filter = "Documents Files(*.doc;*.docx;*.xls;*.xlsx;*.ppt;.txt;*.zip;*.rar)|*.doc;*.docx;*.xls;*.xlsx;*.ppt;.txt;*.zip;*.rar";
+            OpenFilesDialog(Filter);
         }
 
         /// <summary>
         /// The functions that works when a CloseWindowCommand is called
         /// </summary>
-        private void CloseWindow()
+        private void CloseWindow(Window window)
         {
+           
+            if(window != null)
+            {
+                window.Close();
+            }
             //TODO: logic to close this* window
         }
 
+        #endregion
 
 
-        #endregion 
+        #region Methods 
+
+        private void OpenFilesDialog(string filter)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = "c:\\";
+                openFileDialog.Multiselect = true;
+                openFileDialog.Filter = filter;//;
+                openFileDialog.FilterIndex = 2;
+                openFileDialog.RestoreDirectory = true;
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+
+                    //TODO: Some logic to add image
+                    
+                    //this logic was bad
+                    //Grid grid = new Grid();
+
+                    //Image image = new Image
+                    //{
+                    //    Source = new System.Windows.Media.Imaging.BitmapImage(new Uri(openFileDialog.FileName, UriKind.Absolute)),
+                    //    Margin = new Thickness(0, 0, 6, 0),
+                    //    Height = 85
+                    //};
+                    //grid.Children.Add(image);
+                    //grid.Children.Add(Get_button());
+                    //Body_attached_files.Children.Add(grid);
+                }
+            }
+            
+        }
+        #endregion
 
 
     }

@@ -2,7 +2,7 @@
 using LNAU24.Base;
 using System.Drawing;
 using FluentValidation;
-using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace LNAU24.ViewModels.UserViewModels
 {
@@ -23,7 +23,7 @@ namespace LNAU24.ViewModels.UserViewModels
             set
             {
                 _user.UserName = value;
-                NotifyPropertyChanged("UserName");
+                NotifyPropertyChanged(nameof(UserName));
             }
         }
 
@@ -33,7 +33,7 @@ namespace LNAU24.ViewModels.UserViewModels
             set
             {
                 _user.UserSurname = value;
-                NotifyPropertyChanged("UserSurname");
+                NotifyPropertyChanged(nameof(UserSurname));
             }
         }
 
@@ -43,7 +43,7 @@ namespace LNAU24.ViewModels.UserViewModels
             set
             {
                 _user.UserEmail = value;
-                NotifyPropertyChanged("UserEmail");
+                NotifyPropertyChanged(nameof(UserEmail));
             }
         }
 
@@ -53,7 +53,7 @@ namespace LNAU24.ViewModels.UserViewModels
             set
             {
                 _user.UserImage = value;
-                NotifyPropertyChanged("UserImage");
+                NotifyPropertyChanged(nameof(UserImage));
             }
         }
 
@@ -63,19 +63,19 @@ namespace LNAU24.ViewModels.UserViewModels
             set
             {
                 _user.StatusIn = value;
-                NotifyPropertyChanged("StatusIn");
+                NotifyPropertyChanged(nameof(UserStatusIn));
             }
         }
 
 
-        public ObservableCollection<User> _userList;
-        public ObservableCollection<User> UsersList
+        public List<User> _userList;
+        public List<User> UsersList
         {
             get => _userList;
             set
             {
                 _userList = value;
-                NotifyPropertyChanged("UsersList");
+                NotifyPropertyChanged(nameof(UsersList));
             }
         }
         #endregion

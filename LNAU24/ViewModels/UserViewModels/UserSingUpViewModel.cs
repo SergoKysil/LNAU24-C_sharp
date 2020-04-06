@@ -1,5 +1,4 @@
-﻿using LNAU24.Base;
-using LNAU24.Models;
+﻿using LNAU24.Models;
 using LNAU24.Validator;
 using System.Windows;
 using System.Windows.Input;
@@ -25,7 +24,7 @@ namespace LNAU24.ViewModels.UserViewModels
             _user = new User();
             _userValidator = new UserValidator();
 
-            SingUpUserConfirmed = new RelayCommand(ConfirmedSingUp);
+            //SingUpUserConfirmed = new RelayCommand(ConfirmedSingUp);
 
         }
         #endregion
