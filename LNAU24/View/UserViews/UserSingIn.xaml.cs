@@ -16,21 +16,12 @@ namespace LNAU24.View.UserViews
             DataContext = new UserSingInViewModel();
         }
 
-        
 
-        private void btn_Exit_Click(object sender, RoutedEventArgs e)
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
-
-        }
-
-
-
-        private void btn_Create_account_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
-            UserSingUp reg = new UserSingUp();
-            reg.Show();
+            if (e.ChangedButton == MouseButton.Left)
+                this.DragMove();
         }
     }
 }

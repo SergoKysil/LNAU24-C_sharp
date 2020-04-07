@@ -18,7 +18,7 @@ namespace LNAU24.Models
 
         public List<string> Files { get; set; }
 
-        public ObservableCollection<Image> Images { get; set; }
+        public ObservableCollection<string> Images { get; set; } = new ObservableCollection<string>();
 
     }
 }

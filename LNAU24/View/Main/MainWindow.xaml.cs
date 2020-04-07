@@ -29,7 +29,7 @@ namespace LNAU24.View.Main
             btn_Open_menu.Visibility = Visibility.Visible;        
         }
 
-        readonly NewsView magazine = new NewsView();
+        readonly ListNewsView magazine = new ListNewsView();
         
        
 
@@ -70,13 +70,13 @@ namespace LNAU24.View.Main
             {
                 this.WindowState = WindowState.Normal;               
                 grid_content_resize_norm();
-                magazine.normal_news();
+                
             } 
             else
             {
                 this.WindowState = WindowState.Maximized;                
                 grid_content_resize_max();
-                magazine.maximazed_news();
+                
             }
 
         }

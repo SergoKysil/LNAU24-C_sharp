@@ -1,6 +1,8 @@
 ﻿using LNAU24.Base;
 using LNAU24.Models;
 using LNAU24.Validator;
+using LNAU24.Views.UserViews;
+using System.Windows;
 using System.Windows.Input;
 
 namespace LNAU24.ViewModels.UserViewModels
@@ -23,6 +25,12 @@ namespace LNAU24.ViewModels.UserViewModels
         /// The command to open view to create user
         /// </summary>
         public ICommand CreateAccountCommand { get; private set; }
+
+        /// <summary>
+        /// THe command to close UserSingIn window
+        /// </summary>
+        public ICommand CloseWindowCommand { get; private set; }
+
         #endregion
 
 
@@ -40,7 +48,7 @@ namespace LNAU24.ViewModels.UserViewModels
             SingInUserConfirmedCommand = new RelayCommand(SingInUserConfirmed);
             ForgotPasswordCommand = new RelayCommand(ForgotPassword);
             CreateAccountCommand = new RelayCommand(CreateAccount);
-
+            CloseWindowCommand = new RelayCommand<Window>(CloseWindow);
         }
         #endregion
 
@@ -84,9 +92,24 @@ namespace LNAU24.ViewModels.UserViewModels
         /// </summary>
         private void CreateAccount()
         {
-            //TODO: There will be logic to open SingUp window
+            UserSingUp w = new UserSingUp();
+            w.ShowDialog();
         }
 
+        #endregion
+
+        #region Close Window
+        /// <summary>
+        /// The function that works where CloseWindowCommand is called
+        /// </summary>
+        /// <param name="window"></param>
+        private void CloseWindow(Window window)
+        {
+            if (window != null)
+            {
+                window.Close();
+            }
+        }
         #endregion
 
 

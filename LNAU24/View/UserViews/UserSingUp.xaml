@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        xmlns:local ="clr-namespace:LNAU24"
-        Title="sing_up" Height="640" Width="450" WindowStartupLocation="CenterScreen" WindowStyle="None" ResizeMode="NoResize" Icon="/Resources/image/logos/Logoico.ico">
+        Title="sing_up" Height="640" Width="450" WindowStartupLocation="CenterScreen" Icon="/Resources/image/logos/logo_white_ico32px.ico" WindowStyle="None" ResizeMode="NoResize">
     <Grid >
 
         <Grid.Background>

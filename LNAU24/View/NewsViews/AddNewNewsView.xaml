@@ -8,7 +8,7 @@ x:Name="Add_news"
        xmlns:local ="clr-namespace:LNAU24"
         mc:Ignorable="d"
       
-        Title="add_news" Height="700" Width="800" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="Додавання новини" Height="700" Width="800" WindowStyle="None" Icon="/Resources/image/logos/logo_white_ico32px.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
 
     <Border>
         <Border.Background>
@@ -18,8 +18,8 @@ x:Name="Add_news"
             </LinearGradientBrush>
         </Border.Background>
         <Grid>
-            <StackPanel >
-                <Grid x:Name="title" Background="Transparent" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" >
+            <StackPanel Focusable="True" >
+                <Grid x:Name="title" Background="Transparent" Height="50" HorizontalAlignment="Stretch" VerticalAlignment="Top" MouseDown="title_MouseDown" >
                     <Label Content="Додавання новини" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="30" FontFamily="Gabriola"></Label>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -44,7 +44,7 @@ x:Name="Add_news"
                     </StackPanel>
 
                 </Grid>
-                <Border x:Name="body" CornerRadius="15" Background="White" Margin="30,6,30,6"   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="455">
+                <Border x:Name="body" CornerRadius="15" Background="White" Margin="30,6,30,6"   VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Height="455" Focusable="True">
                     <Grid Margin="20,20,20,20" >
                         <StackPanel>
                             <TextBox x:Name="Tb_title" Margin="15" Text="{Binding Title}"
@@ -87,11 +87,50 @@ x:Name="Add_news"
                             <Label x:Name="title_attach" FontFamily="{StaticResource MaterialDesignFont}" Content="Додані файли" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="20" Style="{StaticResource MaterialDesignLabel}" ></Label>
                             <Separator Margin="20 0" Background="DarkGray"></Separator>
                             <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Hidden"   Width="700" VerticalAlignment="Bottom" Height="105" >
-                                <StackPanel x:Name="Body_attached_files" Orientation="Horizontal" Height="85">
-                                    
+                                <StackPanel >
+                                    <ItemsControl ItemsSource="{Binding Images}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <WrapPanel />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid >
+                                                    <Image x:Name="image"
+                                                    Width="95"
+                                                    Height="95"
+                                                    
+                                                    Source="{Binding FallbackValue='http://placehold.it/100x100/302e31'}"></Image>
 
+                                                    <Border Padding="0"
+                                                    Width="{Binding RelativeSource={RelativeSource Self}, Path=ActualHeight}"
+                                                    HorizontalAlignment="Right"
+                                                    VerticalAlignment="Top"
+                                                    Background="#FFFF2020"
+                                                    CornerRadius="5">
+                                                        <Border.InputBindings>
+                                                            <MouseBinding
+                                                           Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}, Path=DataContext.RemoveImageCommand}"
+                                                            CommandParameter="{Binding}"
+                                                            Gesture="LeftClick" />
+                                                        </Border.InputBindings>
 
+                                                        <TextBlock
+                                                        
+                                                        HorizontalAlignment="Center"
+                                                        VerticalAlignment="Center"
+                                                        Foreground="White"
+                                                        FontSize="16"
+                                                        Text="🗙" />
+                                                    </Border>
+
+                                                </Grid>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
                                 </StackPanel>
+
 
                             </ScrollViewer>
 

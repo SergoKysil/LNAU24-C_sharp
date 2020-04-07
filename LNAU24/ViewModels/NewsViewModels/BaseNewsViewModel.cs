@@ -57,7 +57,7 @@ namespace LNAU24.ViewModels.NewsViewModels
             }
         }
 
-        public ObservableCollection<Image> Images
+        public ObservableCollection<string> Images
         {
             get => _news.Images;
             set

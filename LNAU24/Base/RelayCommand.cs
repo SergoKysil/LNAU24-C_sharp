@@ -72,6 +72,8 @@ namespace LNAU24.Base
         /// The event thats fired when the <see cref="CanExecute(object)"/> value changed
         /// </summary>
         public event EventHandler CanExecuteChanged = (sender, e) => { };
+
+
         #endregion
 
 

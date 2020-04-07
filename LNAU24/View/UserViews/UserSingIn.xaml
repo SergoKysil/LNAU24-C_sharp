@@ -5,9 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+        x:Name="SingIn"
         xmlns:local ="clr-namespace:LNAU24"
-        Title="Sing_in" Height="600" Width="450"  Icon="/Resources/image/logos/Logoico.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid >
+        Title="Авторизація" Height="600" Width="450"  Icon="/Resources/image/logos/logo_white_ico32px.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
+    <Grid MouseDown="Grid_MouseDown" >
             
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -73,7 +74,7 @@
                         <Button x:Name="btn_Create_account"
                     Content="Створити аккаунт"
                     Margin="-5"
-                    Style="{StaticResource Style_for_button_white}" Click="btn_Create_account_Click">
+                    Style="{StaticResource Style_for_button_white}" Command="{Binding CreateAccountCommand}">
                         </Button>
 
                     </StackPanel>
@@ -83,8 +84,8 @@
             </Border>
 
         </StackPanel>
-        <Button x:Name="btn_Exit" VerticalAlignment="Top" HorizontalAlignment="Right" Width="48" Height="30" BorderBrush="Transparent" Background="Transparent" Click="btn_Exit_Click">
-            <materialDesign:PackIcon Kind="Close" Foreground="Green" Width="auto" Height="auto"/>
+        <Button x:Name="btn_Exit" VerticalAlignment="Top" Padding="0" HorizontalAlignment="Right" Width="50" Height="50" BorderBrush="Transparent" Background="Transparent"  Command="{Binding CloseWindowCommand, Mode=OneWay}" CommandParameter="{Binding ElementName=SingIn}">
+            <materialDesign:PackIcon Padding="0" Kind="Close" Foreground="White" Width="30" Height="30"/>
         </Button>
     </Grid>
 
